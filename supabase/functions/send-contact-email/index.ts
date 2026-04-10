@@ -37,7 +37,7 @@ Deno.serve(async (req: Request) => {
 
     const internalEmail = {
       from: "MetroNexa Contact <sales@metronexa.com>",
-      to: ["sales@metronexa.com"],
+      to: ["contact@metronexa.com"],
       subject: `New Contact Form Submission from ${name}`,
       html: `
         <h2>New Contact Form Submission</h2>
