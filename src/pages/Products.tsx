@@ -1,13 +1,11 @@
 import { stripeProducts } from '../stripe-config'
 import { ProductCard } from '../components/ProductCard'
 import { Globe, Smartphone, Search } from 'lucide-react'
-import { Navbar } from '../components/Navbar'
 import { Footer } from '../components/Footer'
 
 export function Products() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 relative overflow-hidden">
-      <Navbar />
       <div className="absolute inset-0 opacity-20">
         <div className="absolute inset-0" style={{
           backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(16, 185, 129, 0.15) 1px, transparent 0)',

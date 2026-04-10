@@ -18,6 +18,7 @@ import { GetStarted } from './pages/GetStarted'
 import { TermsAndConditions } from './pages/TermsAndConditions'
 import { PrivacyPolicy } from './pages/PrivacyPolicy'
 import Admin from './pages/Admin'
+import { Navbar } from './components/Navbar'
 import { supabase } from './lib/supabase'
 
 function AppContent() {
@@ -47,6 +48,7 @@ function AppContent() {
 
   return (
     <div className="min-h-screen bg-slate-950">
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />

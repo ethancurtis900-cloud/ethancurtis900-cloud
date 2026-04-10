@@ -2,7 +2,6 @@ import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { UserProfile } from '../components/UserProfile'
 import { useAuth } from '../hooks/useAuth'
-import { Navbar } from '../components/Navbar'
 import { Footer } from '../components/Footer'
 
 export function Profile() {
@@ -32,7 +31,6 @@ export function Profile() {
 
   return (
     <div className="min-h-screen bg-slate-950">
-      <Navbar />
       <div className="relative pt-32 pb-20 px-4 overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-500 rounded-full blur-3xl opacity-5"></div>
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-cyan-500 rounded-full blur-3xl opacity-5"></div>

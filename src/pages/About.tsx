@@ -1,4 +1,3 @@
-import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
 import { Target, Users, Zap, Award, Heart, TrendingUp } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -6,8 +5,6 @@ import { Link } from 'react-router-dom';
 export function About() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-navy-950 via-navy-900 to-navy-950">
-      <Navbar />
-
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">

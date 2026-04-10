@@ -1,4 +1,3 @@
-import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
 import { Star, Quote, User } from 'lucide-react';
 
@@ -50,8 +49,6 @@ const testimonials = [
 export function TestimonialsPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-metro-950 via-metro-900 to-metro-950">
-      <Navbar />
-
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">

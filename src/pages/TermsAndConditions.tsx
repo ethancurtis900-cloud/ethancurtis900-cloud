@@ -1,11 +1,8 @@
-import { Navbar } from '@/components/Navbar'
 import { Footer } from '@/components/Footer'
 
 export function TermsAndConditions() {
   return (
     <div className="min-h-screen bg-slate-950">
-      <Navbar />
-
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
         <h1 className="text-3xl sm:text-4xl font-bold text-white mb-4">Terms and Conditions</h1>
         <p className="text-slate-400 mb-8">Last updated: March 29, 2025</p>

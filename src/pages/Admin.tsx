@@ -5,7 +5,6 @@ import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card'
 import { Button } from '../components/ui/button';
 import { AlertCircle, Users, CreditCard, Mail, Loader2, UserPlus, X, Phone, Building2, Tag, Calendar, MessageSquare } from 'lucide-react';
 import { Alert, AlertDescription } from '../components/ui/alert';
-import { Navbar } from '../components/Navbar';
 
 interface Profile {
   id: string;
@@ -197,8 +196,6 @@ export default function Admin() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      <Navbar />
-
       {/* Inquiry Detail Modal */}
       {selectedInquiry && (
         <div

@@ -8,7 +8,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Alert, AlertDescription } from '@/components/ui/alert'
 import { Loader2, Eye, EyeOff } from 'lucide-react'
 import { EmailConfirmationModal } from './EmailConfirmationModal'
-import { Navbar } from '../Navbar'
 
 export function SignupForm() {
   const [email, setEmail] = useState('')
@@ -71,7 +70,6 @@ export function SignupForm() {
 
   return (
     <>
-      <Navbar />
       <div className="min-h-screen flex items-center justify-center bg-slate-950 py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         {showConfirmation && (
           <EmailConfirmationModal

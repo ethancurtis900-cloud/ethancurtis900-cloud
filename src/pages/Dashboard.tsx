@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Navbar } from '../components/Navbar'
 import { Footer } from '../components/Footer'
 import { useAuth } from '../hooks/useAuth'
 import { useStripe } from '../hooks/useStripe'
@@ -101,7 +100,6 @@ export function Dashboard() {
 
   return (
     <div className="min-h-screen bg-slate-950">
-      <Navbar />
       <div className="relative pt-24 pb-20 px-4 overflow-hidden">
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-emerald-500 rounded-full blur-3xl opacity-5"></div>
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-cyan-500 rounded-full blur-3xl opacity-5"></div>
