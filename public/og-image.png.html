@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            width: 1200px;
+            height: 630px;
+            position: relative;
+            overflow: hidden;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px;
+        }
+        .content {
+            text-align: center;
+            z-index: 10;
+        }
+        .logo {
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 40px;
+            background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
+            border-radius: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 30px 80px rgba(16, 185, 129, 0.5);
+        }
+        .logo svg {
+            width: 90px;
+            height: 90px;
+        }
+        h1 {
+            color: white;
+            font-size: 80px;
+            font-weight: 800;
+            margin-bottom: 28px;
+            letter-spacing: -2px;
+        }
+        .brand {
+            background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        p {
+            color: #cbd5e1;
+            font-size: 38px;
+            font-weight: 600;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.3;
+        }
+        .accent {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .accent-1 {
+            top: -250px;
+            right: -250px;
+        }
+        .accent-2 {
+            bottom: -250px;
+            left: -250px;
+            background: radial-gradient(circle, rgba(6, 182, 212, 0.15) 0%, transparent 70%);
+        }
+    </style>
+</head>
+<body>
+    <div class="accent accent-1"></div>
+    <div class="accent accent-2"></div>
+    <div class="container">
+        <div class="content">
+            <div class="logo">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 32V16L18 22L24 16L30 22L36 16V32" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="18" cy="22" r="1.5" fill="white"/>
+                    <circle cx="24" cy="16" r="1.5" fill="white"/>
+                    <circle cx="30" cy="22" r="1.5" fill="white"/>
+                </svg>
+            </div>
+            <h1>Metro<span class="brand">Nexa</span></h1>
+            <p>High-Converting Websites for Local Businesses</p>
+        </div>
+    </div>
+</body>
+</html>

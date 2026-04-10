@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Disallow: /dashboard
+Disallow: /profile
+Disallow: /admin
+Disallow: /login
+Disallow: /signup
+Disallow: /reset-password
+Disallow: /email-confirmed
+
+Sitemap: https://metronexa.com/sitemap.xml

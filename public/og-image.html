@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            width: 1200px;
+            height: 630px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0c1e2e 0%, #1a2f42 100%);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        .container {
+            text-align: center;
+            padding: 60px;
+        }
+        .logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 40px;
+            background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 60px rgba(16, 185, 129, 0.4);
+        }
+        .logo svg {
+            width: 80px;
+            height: 80px;
+        }
+        h1 {
+            color: white;
+            font-size: 64px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+        .brand {
+            background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        p {
+            color: #94a3b8;
+            font-size: 32px;
+            font-weight: 500;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 32V16L18 22L24 16L30 22L36 16V32" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="18" cy="22" r="1.5" fill="white"/>
+                <circle cx="24" cy="16" r="1.5" fill="white"/>
+                <circle cx="30" cy="22" r="1.5" fill="white"/>
+            </svg>
+        </div>
+        <h1>Metro<span class="brand">Nexa</span></h1>
+        <p>Websites for Local Service Businesses</p>
+    </div>
+</body>
+</html>

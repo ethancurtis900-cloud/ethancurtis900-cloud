@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            width: 1200px;
+            height: 630px;
+            position: relative;
+            overflow: hidden;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('Business_success_under_warm_lights_optimized_2000_(3).png') center/cover;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(12, 30, 46, 0.92) 0%, rgba(26, 47, 66, 0.88) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            text-align: center;
+            padding: 60px;
+            z-index: 10;
+        }
+        .logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 30px;
+            background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 25px 70px rgba(16, 185, 129, 0.5);
+        }
+        .logo svg {
+            width: 80px;
+            height: 80px;
+        }
+        h1 {
+            color: white;
+            font-size: 72px;
+            font-weight: 800;
+            margin-bottom: 24px;
+            letter-spacing: -1.5px;
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+        .brand {
+            background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        p {
+            color: #e2e8f0;
+            font-size: 36px;
+            font-weight: 600;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.3;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <div class="overlay">
+        <div class="container">
+            <div class="logo">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 32V16L18 22L24 16L30 22L36 16V32" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="18" cy="22" r="1.5" fill="white"/>
+                    <circle cx="24" cy="16" r="1.5" fill="white"/>
+                    <circle cx="30" cy="22" r="1.5" fill="white"/>
+                </svg>
+            </div>
+            <h1>Metro<span class="brand">Nexa</span></h1>
+            <p>High-Converting Websites for Local Businesses</p>
+        </div>
+    </div>
+</body>
+</html>

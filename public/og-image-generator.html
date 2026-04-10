@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+        canvas {
+            border: 1px solid #ccc;
+            display: block;
+            margin: 20px 0;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>OG Image Generator</h1>
+    <canvas id="canvas" width="1200" height="630"></canvas>
+    <button onclick="downloadImage()">Download PNG</button>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        // Create gradient background
+        const bgGradient = ctx.createLinearGradient(0, 0, 1200, 630);
+        bgGradient.addColorStop(0, '#0f172a');
+        bgGradient.addColorStop(1, '#1e293b');
+        ctx.fillStyle = bgGradient;
+        ctx.fillRect(0, 0, 1200, 630);
+
+        // Draw logo background with gradient
+        const logoGradient = ctx.createLinearGradient(400, 115, 800, 515);
+        logoGradient.addColorStop(0, '#10b981');
+        logoGradient.addColorStop(1, '#06b6d4');
+
+        // Rounded rectangle for logo background
+        const x = 400, y = 115, width = 400, height = 400, radius = 80;
+        ctx.fillStyle = logoGradient;
+        ctx.beginPath();
+        ctx.moveTo(x + radius, y);
+        ctx.lineTo(x + width - radius, y);
+        ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+        ctx.lineTo(x + width, y + height - radius);
+        ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+        ctx.lineTo(x + radius, y + height);
+        ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+        ctx.lineTo(x, y + radius);
+        ctx.quadraticCurveTo(x, y, x + radius, y);
+        ctx.closePath();
+        ctx.fill();
+
+        // Draw M logo
+        ctx.strokeStyle = 'white';
+        ctx.lineWidth = 25;
+        ctx.lineCap = 'round';
+        ctx.lineJoin = 'round';
+
+        ctx.beginPath();
+        ctx.moveTo(500, 381.67);
+        ctx.lineTo(500, 248.33);
+        ctx.lineTo(550, 298.33);
+        ctx.lineTo(600, 248.33);
+        ctx.lineTo(650, 298.33);
+        ctx.lineTo(700, 248.33);
+        ctx.lineTo(700, 381.67);
+        ctx.stroke();
+
+        // Draw circles at peaks
+        ctx.fillStyle = 'white';
+        ctx.beginPath();
+        ctx.arc(550, 298.33, 12.5, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(600, 248.33, 12.5, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(650, 298.33, 12.5, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Draw company name
+        ctx.fillStyle = 'white';
+        ctx.font = 'bold 56px system-ui, -apple-system, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText('MetroNexa', 600, 560);
+
+        // Draw tagline
+        ctx.fillStyle = '#94a3b8';
+        ctx.font = '400 28px system-ui, -apple-system, sans-serif';
+        ctx.fillText('High-Converting Websites for Local Businesses', 600, 595);
+
+        function downloadImage() {
+            const link = document.createElement('a');
+            link.download = 'og-image.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        }
+    </script>
+</body>
+</html>

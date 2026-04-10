@@ -1,0 +1,40 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <!-- Professional gradient background -->
+  <defs>
+    <linearGradient id="bg-gradient" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="logo-gradient" x1="0" y1="0" x2="400" y2="400" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#10b981"/>
+      <stop offset="1" stop-color="#06b6d4"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg-gradient)"/>
+
+  <!-- Main logo centered -->
+  <g transform="translate(400, 115)">
+    <rect width="400" height="400" rx="80" fill="url(#logo-gradient)"/>
+    <path
+      d="M100 266.67V133.33L150 183.33L200 133.33L250 183.33L300 133.33V266.67"
+      stroke="white"
+      stroke-width="25"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <circle cx="150" cy="183.33" r="12.5" fill="white"/>
+    <circle cx="200" cy="133.33" r="12.5" fill="white"/>
+    <circle cx="250" cy="183.33" r="12.5" fill="white"/>
+  </g>
+
+  <!-- Company name -->
+  <text x="600" y="560" font-family="system-ui, -apple-system, sans-serif" font-size="56" font-weight="700" fill="white" text-anchor="middle">
+    MetroNexa
+  </text>
+
+  <!-- Tagline -->
+  <text x="600" y="595" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="400" fill="#94a3b8" text-anchor="middle">
+    High-Converting Websites for Local Businesses
+  </text>
+</svg>
