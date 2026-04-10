@@ -1,18 +1,13 @@
 import { Menu, X, User, Shield } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Logo } from './Logo';
 import { useAuth } from '../hooks/useAuth';
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [ready, setReady] = useState(false);
   const { user, isAdmin, loading } = useAuth();
   const location = useLocation();
-
-  useEffect(() => {
-    setReady(true);
-  }, []);
 
   const isActive = (path: string) => {
     if (path === '/') return location.pathname === '/';
@@ -22,8 +17,7 @@ export function Navbar() {
   const navLinkClass = (path: string) => {
     const active = isActive(path);
     return [
-      'text-slate-300 hover:text-white font-medium relative',
-      ready ? 'transition-colors' : '',
+      'text-slate-300 hover:text-white font-medium transition-colors relative',
       'after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-gradient-to-r after:from-emerald-500 after:to-cyan-500',
       active
         ? 'text-white after:w-full'

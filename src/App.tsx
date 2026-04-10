@@ -18,7 +18,6 @@ import { GetStarted } from './pages/GetStarted'
 import { TermsAndConditions } from './pages/TermsAndConditions'
 import { PrivacyPolicy } from './pages/PrivacyPolicy'
 import Admin from './pages/Admin'
-import { useAuth } from './hooks/useAuth'
 import { supabase } from './lib/supabase'
 
 function AppContent() {
@@ -73,16 +72,6 @@ function AppContent() {
 }
 
 function App() {
-  const { loading } = useAuth()
-
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-accent-500"></div>
-      </div>
-    )
-  }
-
   return (
     <Router>
       <AppContent />
