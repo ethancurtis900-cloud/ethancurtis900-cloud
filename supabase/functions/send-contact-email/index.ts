@@ -95,8 +95,8 @@ Deno.serve(async (req: Request) => {
                         <table width="100%" cellpadding="0" cellspacing="0">
                           <tr>
                             <td align="center">
-                              <a href="https://metronexa.com" style="display:inline-block;background:linear-gradient(135deg,#10b981,#06b6d4);color:#ffffff;text-decoration:none;padding:14px 36px;border-radius:8px;font-size:15px;font-weight:600;letter-spacing:0.3px;">
-                                Explore MetroNexa
+                              <a href="https://metronexa.com/dashboard" style="display:inline-block;background:linear-gradient(135deg,#10b981,#06b6d4);color:#ffffff;text-decoration:none;padding:14px 36px;border-radius:8px;font-size:15px;font-weight:600;letter-spacing:0.3px;">
+                                Go to Dashboard
                               </a>
                             </td>
                           </tr>
