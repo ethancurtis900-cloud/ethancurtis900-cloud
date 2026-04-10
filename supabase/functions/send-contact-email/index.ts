@@ -36,7 +36,7 @@ Deno.serve(async (req: Request) => {
     const firstName = name.split(" ")[0];
 
     const internalEmail = {
-      from: "MetroNexa Contact <contact@metronexa.com>",
+      from: "MetroNexa Contact <sales@metronexa.com>",
       to: ["sales@metronexa.com"],
       subject: `New Contact Form Submission from ${name}`,
       html: `
@@ -53,7 +53,7 @@ Deno.serve(async (req: Request) => {
     };
 
     const confirmationEmail = {
-      from: "MetroNexa <contact@metronexa.com>",
+      from: "MetroNexa <sales@metronexa.com>",
       to: [email],
       subject: "We received your submission — MetroNexa",
       html: `
