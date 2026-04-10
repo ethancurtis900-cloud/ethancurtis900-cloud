@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Navbar } from '../components/Navbar'
 import { Footer } from '../components/Footer'
@@ -6,19 +6,78 @@ import { useAuth } from '../hooks/useAuth'
 import { useStripe } from '../hooks/useStripe'
 import { Button } from '../components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card'
-import { User, CreditCard, Package, ShoppingBag, LogOut, TrendingUp } from 'lucide-react'
-import { formatCurrency } from '../lib/utils'
+import { Input } from '../components/ui/input'
+import { User, CreditCard, Package, LogOut, Pencil, Check, X } from 'lucide-react'
+import { supabase } from '../lib/supabase'
 
 export function Dashboard() {
   const navigate = useNavigate()
   const { user, signOut, loading: authLoading } = useAuth()
   const { subscription, orders } = useStripe()
+  const [username, setUsername] = useState('')
+  const [editingUsername, setEditingUsername] = useState(false)
+  const [usernameInput, setUsernameInput] = useState('')
+  const [usernameError, setUsernameError] = useState('')
+  const [usernameLoading, setUsernameLoading] = useState(false)
 
   useEffect(() => {
     if (!authLoading && !user) {
       navigate('/login')
     }
   }, [user, authLoading, navigate])
+
+  useEffect(() => {
+    if (user) {
+      supabase
+        .from('profiles')
+        .select('username')
+        .eq('id', user.id)
+        .maybeSingle()
+        .then(({ data }) => {
+          if (data?.username) setUsername(data.username)
+        })
+    }
+  }, [user])
+
+  const handleEditUsername = () => {
+    setUsernameInput(username)
+    setUsernameError('')
+    setEditingUsername(true)
+  }
+
+  const handleCancelUsername = () => {
+    setEditingUsername(false)
+    setUsernameError('')
+  }
+
+  const handleSaveUsername = async () => {
+    const trimmed = usernameInput.trim()
+    if (!trimmed) {
+      setUsernameError('Username cannot be empty.')
+      return
+    }
+    if (!/^[a-zA-Z0-9_-]{3,30}$/.test(trimmed)) {
+      setUsernameError('3–30 characters. Letters, numbers, _ and - only.')
+      return
+    }
+    setUsernameLoading(true)
+    setUsernameError('')
+    const { error } = await supabase
+      .from('profiles')
+      .update({ username: trimmed })
+      .eq('id', user!.id)
+    setUsernameLoading(false)
+    if (error) {
+      if (error.code === '23505') {
+        setUsernameError('That username is already taken.')
+      } else {
+        setUsernameError('Failed to save. Please try again.')
+      }
+    } else {
+      setUsername(trimmed)
+      setEditingUsername(false)
+    }
+  }
 
   const handleSignOut = async () => {
     await signOut()
@@ -67,7 +126,7 @@ export function Dashboard() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
             <Card className="bg-gradient-to-br from-emerald-500/10 to-cyan-500/10 border-emerald-500/20 hover:border-emerald-500/40 transition-all">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-white">
@@ -95,39 +154,6 @@ export function Dashboard() {
                 </div>
               </CardContent>
             </Card>
-
-            <Card className="bg-gradient-to-br from-cyan-500/10 to-blue-500/10 border-cyan-500/20 hover:border-cyan-500/40 transition-all">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2 text-white">
-                  <ShoppingBag className="h-5 w-5 text-cyan-400" />
-                  Total Orders
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="text-3xl font-bold text-white mb-2">{orders?.length || 0}</div>
-                <p className="text-slate-400 text-sm">
-                  {orders?.filter(o => o.order_status === 'completed').length || 0} completed
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 border-purple-500/20 hover:border-purple-500/40 transition-all">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2 text-white">
-                  <TrendingUp className="h-5 w-5 text-purple-400" />
-                  Total Spent
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="text-3xl font-bold text-white mb-2">
-                  {formatCurrency(
-                    (orders || []).reduce((sum, order) => sum + order.amount_total, 0) / 100,
-                    orders?.[0]?.currency || 'usd'
-                  )}
-                </div>
-                <p className="text-slate-400 text-sm">Lifetime value</p>
-              </CardContent>
-            </Card>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -145,9 +171,54 @@ export function Dashboard() {
                     <span className="text-slate-400">Email</span>
                     <span className="text-white font-medium">{user.email}</span>
                   </div>
-                  <div className="flex items-center justify-between py-3 border-b border-slate-800">
-                    <span className="text-slate-400">User ID</span>
-                    <span className="text-white font-mono text-sm">{user.id.slice(0, 8)}...</span>
+                  <div className="py-3 border-b border-slate-800">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-slate-400">Username</span>
+                      {!editingUsername && (
+                        <button
+                          onClick={handleEditUsername}
+                          className="flex items-center gap-1.5 text-sm text-emerald-400 hover:text-emerald-300 transition-colors"
+                        >
+                          <Pencil className="h-3.5 w-3.5" />
+                          {username ? 'Edit' : 'Set username'}
+                        </button>
+                      )}
+                    </div>
+                    {editingUsername ? (
+                      <div className="space-y-2">
+                        <div className="flex items-center gap-2">
+                          <Input
+                            value={usernameInput}
+                            onChange={e => setUsernameInput(e.target.value)}
+                            placeholder="e.g. john_doe"
+                            className="bg-slate-800 border-slate-700 text-white placeholder-slate-500 h-9 text-sm"
+                            onKeyDown={e => { if (e.key === 'Enter') handleSaveUsername(); if (e.key === 'Escape') handleCancelUsername() }}
+                            autoFocus
+                          />
+                          <button
+                            onClick={handleSaveUsername}
+                            disabled={usernameLoading}
+                            className="p-2 rounded-lg bg-emerald-500/20 text-emerald-400 hover:bg-emerald-500/30 transition-colors disabled:opacity-50"
+                          >
+                            <Check className="h-4 w-4" />
+                          </button>
+                          <button
+                            onClick={handleCancelUsername}
+                            className="p-2 rounded-lg bg-slate-700/50 text-slate-400 hover:bg-slate-700 transition-colors"
+                          >
+                            <X className="h-4 w-4" />
+                          </button>
+                        </div>
+                        {usernameError && (
+                          <p className="text-red-400 text-xs">{usernameError}</p>
+                        )}
+                        <p className="text-slate-500 text-xs">3–30 characters. Letters, numbers, _ and - only.</p>
+                      </div>
+                    ) : (
+                      <span className="text-white font-medium">
+                        {username || <span className="text-slate-500 italic text-sm">No username set</span>}
+                      </span>
+                    )}
                   </div>
                   <div className="flex items-center justify-between py-3">
                     <span className="text-slate-400">Account Type</span>
