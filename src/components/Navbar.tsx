@@ -1,5 +1,5 @@
 import { Menu, X, User, Shield } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import { Logo } from './Logo';
 import { useAuth } from '../hooks/useAuth';
@@ -7,6 +7,33 @@ import { useAuth } from '../hooks/useAuth';
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { user, isAdmin } = useAuth();
+  const location = useLocation();
+
+  const isActive = (path: string) => {
+    if (path === '/') return location.pathname === '/';
+    return location.pathname === path || location.pathname.startsWith(path + '/');
+  };
+
+  const navLinkClass = (path: string) => {
+    const active = isActive(path);
+    return [
+      'text-slate-300 hover:text-white font-medium transition-colors relative',
+      'after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-gradient-to-r after:from-emerald-500 after:to-cyan-500 after:transition-all',
+      active
+        ? 'text-white after:w-full'
+        : 'after:w-0 hover:after:w-full',
+    ].join(' ');
+  };
+
+  const mobileNavLinkClass = (path: string) => {
+    const active = isActive(path);
+    return [
+      'block px-4 py-3 text-base font-medium rounded-lg transition-colors touch-manipulation',
+      active
+        ? 'text-white bg-slate-800/70 border-l-2 border-emerald-500'
+        : 'text-slate-300 hover:text-white hover:bg-slate-800/50',
+    ].join(' ');
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-950/90 backdrop-blur-xl border-b border-slate-800/50">
@@ -25,17 +52,21 @@ export function Navbar() {
           </Link>
 
           <div className="hidden md:flex items-center gap-8">
-            <Link to="/" className="text-slate-300 hover:text-white font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-emerald-500 after:to-cyan-500 hover:after:w-full after:transition-all">Home</Link>
-            <Link to="/products" className="text-slate-300 hover:text-white font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-emerald-500 after:to-cyan-500 hover:after:w-full after:transition-all">Products</Link>
-            <Link to="/faq" className="text-slate-300 hover:text-white font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-emerald-500 after:to-cyan-500 hover:after:w-full after:transition-all">FAQs</Link>
-            <Link to="/testimonials" className="text-slate-300 hover:text-white font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-emerald-500 after:to-cyan-500 hover:after:w-full after:transition-all">Testimonials</Link>
-            <Link to="/contact" className="text-slate-300 hover:text-white font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-emerald-500 after:to-cyan-500 hover:after:w-full after:transition-all">Contact</Link>
+            <Link to="/" className={navLinkClass('/')}>Home</Link>
+            <Link to="/products" className={navLinkClass('/products')}>Products</Link>
+            <Link to="/faq" className={navLinkClass('/faq')}>FAQs</Link>
+            <Link to="/testimonials" className={navLinkClass('/testimonials')}>Testimonials</Link>
+            <Link to="/contact" className={navLinkClass('/contact')}>Contact</Link>
             {user ? (
               <div className="flex items-center gap-3">
                 {isAdmin && (
                   <Link
                     to="/admin"
-                    className="flex items-center gap-2 text-slate-300 hover:text-white font-medium transition-colors px-4 py-2 rounded-lg hover:bg-slate-800/50"
+                    className={`flex items-center gap-2 font-medium transition-colors px-4 py-2 rounded-lg ${
+                      isActive('/admin')
+                        ? 'text-white bg-slate-800/70'
+                        : 'text-slate-300 hover:text-white hover:bg-slate-800/50'
+                    }`}
                   >
                     <Shield className="w-4 h-4" />
                     Admin
@@ -53,7 +84,11 @@ export function Navbar() {
               <div className="flex items-center gap-3">
                 <Link
                   to="/login"
-                  className="text-slate-300 hover:text-white font-medium transition-colors px-4 py-2 rounded-lg hover:bg-slate-800/50"
+                  className={`font-medium transition-colors px-4 py-2 rounded-lg ${
+                    isActive('/login')
+                      ? 'text-white bg-slate-800/70'
+                      : 'text-slate-300 hover:text-white hover:bg-slate-800/50'
+                  }`}
                 >
                   Sign In
                 </Link>
@@ -78,48 +113,22 @@ export function Navbar() {
 
         {isMenuOpen && (
           <div className="md:hidden py-4 space-y-2 border-t border-slate-800/50">
-            <Link
-              to="/"
-              onClick={() => setIsMenuOpen(false)}
-              className="block px-4 py-3 text-base text-slate-300 hover:text-white hover:bg-slate-800/50 rounded-lg transition-colors touch-manipulation"
-            >
-              Home
-            </Link>
-            <Link
-              to="/products"
-              onClick={() => setIsMenuOpen(false)}
-              className="block px-4 py-3 text-base text-slate-300 hover:text-white hover:bg-slate-800/50 rounded-lg transition-colors touch-manipulation"
-            >
-              Products
-            </Link>
-            <Link
-              to="/faq"
-              onClick={() => setIsMenuOpen(false)}
-              className="block px-4 py-3 text-base text-slate-300 hover:text-white hover:bg-slate-800/50 rounded-lg transition-colors touch-manipulation"
-            >
-              FAQs
-            </Link>
-            <Link
-              to="/testimonials"
-              onClick={() => setIsMenuOpen(false)}
-              className="block px-4 py-3 text-base text-slate-300 hover:text-white hover:bg-slate-800/50 rounded-lg transition-colors touch-manipulation"
-            >
-              Testimonials
-            </Link>
-            <Link
-              to="/contact"
-              onClick={() => setIsMenuOpen(false)}
-              className="block px-4 py-3 text-base text-slate-300 hover:text-white hover:bg-slate-800/50 rounded-lg transition-colors touch-manipulation"
-            >
-              Contact
-            </Link>
+            <Link to="/" onClick={() => setIsMenuOpen(false)} className={mobileNavLinkClass('/')}>Home</Link>
+            <Link to="/products" onClick={() => setIsMenuOpen(false)} className={mobileNavLinkClass('/products')}>Products</Link>
+            <Link to="/faq" onClick={() => setIsMenuOpen(false)} className={mobileNavLinkClass('/faq')}>FAQs</Link>
+            <Link to="/testimonials" onClick={() => setIsMenuOpen(false)} className={mobileNavLinkClass('/testimonials')}>Testimonials</Link>
+            <Link to="/contact" onClick={() => setIsMenuOpen(false)} className={mobileNavLinkClass('/contact')}>Contact</Link>
             {user ? (
               <div className="space-y-2 mx-4">
                 {isAdmin && (
                   <Link
                     to="/admin"
                     onClick={() => setIsMenuOpen(false)}
-                    className="flex items-center justify-center gap-2 text-center text-slate-300 hover:text-white hover:bg-slate-800/50 px-6 py-3 rounded-lg font-medium transition-colors touch-manipulation"
+                    className={`flex items-center justify-center gap-2 text-center px-6 py-3 rounded-lg font-medium transition-colors touch-manipulation ${
+                      isActive('/admin')
+                        ? 'text-white bg-slate-800/70 border-l-2 border-emerald-500'
+                        : 'text-slate-300 hover:text-white hover:bg-slate-800/50'
+                    }`}
                   >
                     <Shield className="w-4 h-4" />
                     Admin
@@ -139,7 +148,11 @@ export function Navbar() {
                 <Link
                   to="/login"
                   onClick={() => setIsMenuOpen(false)}
-                  className="block text-center text-slate-300 hover:text-white hover:bg-slate-800/50 px-6 py-3 rounded-lg font-medium transition-colors touch-manipulation"
+                  className={`block text-center px-6 py-3 rounded-lg font-medium transition-colors touch-manipulation ${
+                    isActive('/login')
+                      ? 'text-white bg-slate-800/70 border-l-2 border-emerald-500'
+                      : 'text-slate-300 hover:text-white hover:bg-slate-800/50'
+                  }`}
                 >
                   Sign In
                 </Link>
