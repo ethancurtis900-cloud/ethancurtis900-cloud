@@ -56,8 +56,8 @@ export function Dashboard() {
       setUsernameError('Username cannot be empty.')
       return
     }
-    if (!/^[a-zA-Z0-9_-]{3,30}$/.test(trimmed)) {
-      setUsernameError('3–30 characters. Letters, numbers, _ and - only.')
+    if (!/^[a-zA-Z0-9_-]{8,15}$/.test(trimmed)) {
+      setUsernameError('8–15 characters. Letters, numbers, _ and - only.')
       return
     }
     setUsernameLoading(true)
@@ -212,7 +212,7 @@ export function Dashboard() {
                         {usernameError && (
                           <p className="text-red-400 text-xs">{usernameError}</p>
                         )}
-                        <p className="text-slate-500 text-xs">3–30 characters. Letters, numbers, _ and - only.</p>
+                        <p className="text-slate-500 text-xs">8–15 characters. Letters, numbers, _ and - only.</p>
                       </div>
                     ) : (
                       <span className="text-white font-medium">
