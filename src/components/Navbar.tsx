@@ -18,10 +18,10 @@ export function Navbar() {
     const active = isActive(path);
     return [
       'text-slate-300 hover:text-white font-medium transition-colors relative',
-      'after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-gradient-to-r after:from-emerald-500 after:to-cyan-500 after:transition-all',
+      'after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-gradient-to-r after:from-emerald-500 after:to-cyan-500',
       active
         ? 'text-white after:w-full'
-        : 'after:w-0 hover:after:w-full',
+        : 'after:w-0 hover:after:w-full hover:after:transition-all',
     ].join(' ');
   };
 
