@@ -225,7 +225,7 @@ export function Contact() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="group w-full bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 disabled:opacity-50 disabled:cursor-not-allowed text-white px-8 py-4 sm:px-8 sm:py-4 rounded-xl font-bold transition-all flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 hover:scale-105 text-base sm:text-base touch-manipulation"
+                  className="group w-full bg-gray-900 hover:bg-black disabled:opacity-50 disabled:cursor-not-allowed text-white px-8 py-4 sm:px-8 sm:py-4 rounded-xl font-bold transition-all flex items-center justify-center gap-2 shadow-lg shadow-black/20 hover:scale-105 text-base sm:text-base touch-manipulation"
                 >
                   {isSubmitting ? 'Sending...' : submitted ? 'Message Sent!' : 'Send Message'}
                   <Send className="w-5 h-5 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />

@@ -114,7 +114,7 @@ export function FAQ() {
             </p>
             <Link
               to="/contact"
-              className="inline-block bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-white px-8 py-3 rounded-xl font-semibold transition-all shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 hover:scale-105"
+              className="inline-block bg-gray-900 hover:bg-black text-white px-8 py-3 rounded-xl font-semibold transition-all shadow-lg shadow-black/20 hover:scale-105"
             >
               Contact Us
             </Link>

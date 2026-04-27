@@ -69,7 +69,7 @@ export function Header() {
                   </Button>
                 </Link>
                 <Link to="/signup">
-                  <Button size="sm" className="bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-white shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40">
+                  <Button size="sm" className="bg-gray-900 hover:bg-black text-white shadow-lg shadow-black/20">
                     Sign Up
                   </Button>
                 </Link>

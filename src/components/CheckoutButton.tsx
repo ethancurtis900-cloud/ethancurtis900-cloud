@@ -71,8 +71,8 @@ export function CheckoutButton({ variant = 'primary', className = '', children }
   };
 
   const baseStyles = variant === 'primary'
-    ? 'group inline-flex items-center justify-center gap-3 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-white px-8 py-4 rounded-xl font-semibold transition-all shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100'
-    : 'inline-flex items-center justify-center gap-2 bg-gradient-to-r from-lime-500 to-emerald-500 hover:from-lime-600 hover:to-emerald-600 text-white px-10 py-4 rounded-lg font-bold transition-all transform hover:scale-105 shadow-2xl shadow-emerald-500/40 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100';
+    ? 'group inline-flex items-center justify-center gap-3 bg-gray-900 hover:bg-black text-white px-8 py-4 rounded-xl font-semibold transition-all shadow-lg shadow-black/20 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100'
+    : 'inline-flex items-center justify-center gap-2 bg-gray-900 hover:bg-black text-white px-10 py-4 rounded-lg font-bold transition-all transform hover:scale-105 shadow-2xl shadow-black/20 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100';
 
   return (
     <button

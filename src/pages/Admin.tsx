@@ -277,7 +277,7 @@ export default function Admin() {
             <div className="px-6 pb-6">
               <a
                 href={`mailto:${selectedInquiry.email}`}
-                className="block w-full text-center py-2.5 rounded-lg bg-gradient-to-r from-emerald-600 to-cyan-600 hover:from-emerald-700 hover:to-cyan-700 text-white font-medium text-sm transition-all"
+                className="block w-full text-center py-2.5 rounded-lg bg-gray-900 hover:bg-black text-white font-medium text-sm transition-all"
               >
                 Reply via Email
               </a>

@@ -121,7 +121,7 @@ export function CompanyInquiryForm() {
         </p>
         <Button
           onClick={() => setSuccess(false)}
-          className="bg-gradient-to-r from-emerald-600 to-cyan-600 hover:from-emerald-700 hover:to-cyan-700 text-white"
+          className="bg-gray-900 hover:bg-black text-white"
         >
           Submit Another Inquiry
         </Button>
@@ -279,7 +279,7 @@ export function CompanyInquiryForm() {
         <Button
           type="submit"
           disabled={loading}
-          className="w-full bg-gradient-to-r from-emerald-600 to-cyan-600 hover:from-emerald-700 hover:to-cyan-700 text-white py-6 text-lg font-semibold disabled:opacity-50"
+          className="w-full bg-gray-900 hover:bg-black text-white py-6 text-lg font-semibold disabled:opacity-50"
         >
           {loading ? (
             <>

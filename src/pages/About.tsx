@@ -101,7 +101,7 @@ export function About() {
               </p>
               <Link
                 to="/get-started"
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-cyan-500 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg hover:shadow-emerald-500/30 transition-all duration-300 hover:scale-105"
+                className="inline-flex items-center gap-2 bg-gray-900 hover:bg-black text-white px-8 py-4 rounded-xl font-semibold shadow-lg shadow-black/20 transition-all duration-300 hover:scale-105"
               >
                 Start Your Project
                 <TrendingUp className="w-5 h-5" />

@@ -32,7 +32,7 @@ export function PricingCard({ product, featured = false }: PricingCardProps) {
     }`}>
       {featured && (
         <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-          <span className="bg-gradient-to-r from-emerald-600 to-cyan-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
+          <span className="bg-gray-900 text-white px-4 py-2 rounded-full text-sm font-semibold">
             Most Popular
           </span>
         </div>
@@ -59,9 +59,7 @@ export function PricingCard({ product, featured = false }: PricingCardProps) {
       <Button
         onClick={handleGetStarted}
         className={`w-full py-3 px-6 rounded-lg font-semibold transition-all duration-200 ${
-          featured
-            ? 'bg-gradient-to-r from-emerald-600 to-cyan-600 hover:from-emerald-700 hover:to-cyan-700 text-white shadow-lg hover:shadow-xl'
-            : 'bg-gray-900 hover:bg-gray-800 text-white'
+          'bg-gray-900 hover:bg-black text-white shadow-lg hover:shadow-xl'
         }`}
       >
         Get Started

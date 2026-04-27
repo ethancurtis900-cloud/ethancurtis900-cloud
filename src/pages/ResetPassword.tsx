@@ -139,7 +139,7 @@ export default function ResetPassword() {
 
             <Button
               type="submit"
-              className="w-full bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-white font-semibold shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 transition-all hover:scale-[1.02]"
+              className="w-full bg-gray-900 hover:bg-black text-white font-semibold shadow-lg shadow-black/20 transition-all hover:scale-[1.02]"
               disabled={loading || success}
               size="lg"
             >

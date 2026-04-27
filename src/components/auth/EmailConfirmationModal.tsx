@@ -50,7 +50,7 @@ export function EmailConfirmationModal({ email, onClose }: EmailConfirmationModa
             {onClose && (
               <button
                 onClick={onClose}
-                className="mt-8 w-full py-3 px-4 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-white font-semibold rounded-lg shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 transition-all hover:scale-[1.02]"
+                className="mt-8 w-full py-3 px-4 bg-gray-900 hover:bg-black text-white font-semibold rounded-lg shadow-lg shadow-black/20 transition-all hover:scale-[1.02]"
               >
                 Got it
               </button>

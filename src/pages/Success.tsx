@@ -84,7 +84,7 @@ export function Success() {
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild className="bg-emerald-600 hover:bg-emerald-700">
+              <Button asChild className="bg-gray-900 hover:bg-black">
                 <Link to="/">
                   <Home className="h-4 w-4 mr-2" />
                   Return Home

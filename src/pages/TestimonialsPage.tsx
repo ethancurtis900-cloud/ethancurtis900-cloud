@@ -106,7 +106,7 @@ export function TestimonialsPage() {
             </p>
             <a
               href="/products"
-              className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105"
+              className="inline-flex items-center gap-2 bg-gray-900 hover:bg-black text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105"
             >
               Get Started Today
             </a>

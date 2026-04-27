@@ -42,7 +42,7 @@ export function ProductCard({ product }: ProductCardProps) {
       <CardFooter>
         <Button
           onClick={handleClick}
-          className="w-full bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-white font-bold shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 transition-all hover:scale-105"
+          className="w-full bg-gray-900 hover:bg-black text-white font-bold shadow-lg shadow-black/20 transition-all hover:scale-105"
           size="lg"
         >
           Get Started
