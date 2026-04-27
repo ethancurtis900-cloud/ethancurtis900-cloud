@@ -21,7 +21,7 @@ export function ProductCard({ product }: ProductCardProps) {
     <Card className="w-full max-w-md bg-white border-gray-200 hover:border-emerald-400 transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-500/10 group">
       <CardHeader className="space-y-3 pb-6">
         <CardTitle className="text-3xl font-bold text-gray-900 group-hover:text-emerald-600 transition-colors">{product.name}</CardTitle>
-        <CardDescription className="text-5xl font-black bg-gradient-to-r from-emerald-500 via-cyan-500 to-blue-500 bg-clip-text text-transparent">
+        <CardDescription className="text-5xl font-black text-gray-900">
           {formatCurrency(product.price, product.currency)}
         </CardDescription>
       </CardHeader>

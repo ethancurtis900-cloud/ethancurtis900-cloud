@@ -13,10 +13,7 @@ export function Footer() {
                 <Logo className="w-10 h-10" />
               </div>
               <div className="text-xl font-bold">
-                Metro<span className="relative">
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-cyan-500">Nexa</span>
-                  <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-emerald-500 to-cyan-500"></div>
-                </span>
+                MetroNexa
               </div>
             </div>
             <p className="text-gray-500 mb-6 max-w-md leading-relaxed text-sm">

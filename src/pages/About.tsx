@@ -9,10 +9,7 @@ export function About() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              <span className="text-gray-900">About </span>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-cyan-500">
-                MetroNexa
-              </span>
+              <span className="text-gray-900">About MetroNexa</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               We build websites exclusively for local service businesses. 25+ plumbers, HVAC companies, landscapers, and contractors launched in 2025.
@@ -77,19 +74,19 @@ export function About() {
             <div className="max-w-3xl mx-auto">
               <div className="grid grid-cols-3 gap-8 mb-12">
                 <div>
-                  <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-cyan-500 mb-2">
+                  <div className="text-4xl font-bold text-gray-900 mb-2">
                     25+
                   </div>
                   <div className="text-gray-600 font-medium">Local Businesses Launched</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-cyan-500 mb-2">
+                  <div className="text-4xl font-bold text-gray-900 mb-2">
                     3.2x
                   </div>
                   <div className="text-gray-600 font-medium">Average ROI (90 days)</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-cyan-500 mb-2">
+                  <div className="text-4xl font-bold text-gray-900 mb-2">
                     7-Day
                   </div>
                   <div className="text-gray-600 font-medium">Average Delivery</div>

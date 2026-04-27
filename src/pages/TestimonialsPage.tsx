@@ -56,10 +56,7 @@ export function TestimonialsPage() {
               Success Stories
             </span>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
-              <span className="text-gray-900">Real Results from </span>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-cyan-500">
-                Real Businesses
-              </span>
+              <span className="text-gray-900">Real Results from Real Businesses</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Don't just take our word for it. Hear from small business owners who trusted us to build their online presence and are now reaping the rewards.

@@ -24,7 +24,7 @@ export function Header() {
                 <Logo className="w-10 h-10" />
               </div>
               <span className="text-xl font-bold text-white">
-                Metro<span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">Nexa</span>
+                MetroNexa
               </span>
             </Link>
           </div>

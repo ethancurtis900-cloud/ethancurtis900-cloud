@@ -15,7 +15,7 @@ export function Products() {
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 tracking-tight">
             <span className="text-gray-900">Web Development</span>
             <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 via-cyan-500 to-blue-500">Packages</span>
+            <span className="text-gray-900">Packages</span>
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-12 sm:mb-16 max-w-3xl mx-auto">
             Professional web development services to launch your business online

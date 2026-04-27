@@ -47,7 +47,7 @@ export function EmailConfirmed() {
             <p className="text-slate-400 text-sm mb-2">
               Redirecting to dashboard in
             </p>
-            <p className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">
+            <p className="text-5xl font-bold text-gray-900">
               {countdown}
             </p>
           </div>

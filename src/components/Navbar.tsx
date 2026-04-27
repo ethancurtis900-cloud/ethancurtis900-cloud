@@ -44,10 +44,7 @@ export function Navbar() {
               <Logo className="w-9 h-9 sm:w-10 sm:h-10" />
             </div>
             <div className="text-lg sm:text-xl font-bold text-gray-900">
-              Metro<span className="relative">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-cyan-500">Nexa</span>
-                <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-emerald-500 to-cyan-500"></div>
-              </span>
+              MetroNexa
             </div>
           </Link>
 
