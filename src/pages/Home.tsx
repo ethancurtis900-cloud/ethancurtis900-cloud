@@ -3,7 +3,6 @@ import { WhyChooseUs } from '../components/WhyChooseUs'
 import { Services } from '../components/Services'
 import { Benefits } from '../components/Benefits'
 import { Testimonials } from '../components/Testimonials'
-import { CTA } from '../components/CTA'
 import { Footer } from '../components/Footer'
 
 export function Home() {
@@ -14,7 +13,6 @@ export function Home() {
       <Services />
       <Benefits />
       <Testimonials />
-      <CTA />
       <Footer />
     </div>
   )
