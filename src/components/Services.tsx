@@ -1,39 +1,30 @@
-import { Palette, ShoppingCart, Zap, Smartphone, Search, BarChart3, ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
-
 const services = [
   {
-    icon: Search,
     title: 'Local SEO Domination',
     description: 'Rank on Google when customers search "plumber near me" or "HVAC repair [your city]". We optimize for local searches that drive actual phone calls.',
     features: ['Google Business Profile', 'Local Keywords', 'Map Rankings']
   },
   {
-    icon: Smartphone,
     title: 'Mobile-First Design',
     description: '70% of local searches happen on mobile. Your site works perfectly on every phone, tablet, and device—because that\'s how customers find you.',
     features: ['Tap-to-Call Buttons', 'Easy Navigation', 'Fast Loading']
   },
   {
-    icon: Palette,
     title: 'Service-Focused Pages',
     description: 'Dedicated pages for each service you offer. Plumbing repairs, AC installation, landscaping—each service gets its own optimized page to rank in search.',
     features: ['Service Breakdowns', 'Clear Pricing', 'Before/After Photos']
   },
   {
-    icon: BarChart3,
     title: 'Lead Tracking',
     description: 'Know exactly where your customers come from. Track phone calls, form submissions, and conversions so you see your ROI in real numbers.',
     features: ['Call Tracking', 'Form Analytics', 'Conversion Reports']
   },
   {
-    icon: Zap,
     title: 'Instant Quote Forms',
     description: 'Capture leads 24/7 with simple quote request forms. Customers fill out their info, you get notified instantly—even at 2am on Sunday.',
     features: ['Auto Notifications', 'Email Integration', 'Calendar Booking']
   },
   {
-    icon: ShoppingCart,
     title: 'Online Booking',
     description: 'Let customers book appointments directly from your website. No phone tag, no missed calls—just booked jobs while you sleep.',
     features: ['Calendar Sync', 'Payment Collection', 'Automated Reminders']
@@ -60,12 +51,8 @@ export function Services() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="group relative bg-white rounded-lg p-6 sm:p-6 border border-gray-200 hover:border-emerald-400 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/10 hover:-translate-y-1"
+              className="bg-white rounded-lg p-6 sm:p-6 border border-gray-200 hover:border-emerald-400 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/10 hover:-translate-y-1"
             >
-              <div className="w-12 h-12 sm:w-12 sm:h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-lg flex items-center justify-center mb-5 sm:mb-5 group-hover:scale-110 transition-transform">
-                <service.icon className="w-6 h-6 sm:w-6 sm:h-6 text-white" />
-              </div>
-
               <h3 className="text-xl sm:text-xl font-bold text-gray-900 mb-3 sm:mb-3">
                 {service.title}
               </h3>

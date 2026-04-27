@@ -1,38 +1,30 @@
-import { TrendingUp, Globe, Shield, Clock, Users, DollarSign } from 'lucide-react';
-
 const benefits = [
   {
-    icon: Globe,
     stat: '24/7',
     label: 'Always Open',
     description: 'Your site works while you sleep. Our clients capture leads at 2am, on weekends, and during holidays.'
   },
   {
-    icon: TrendingUp,
     stat: '3.2x',
     label: 'Average ROI',
     description: 'Clients see 3.2x return on investment within 90 days. Some recover their website cost in the first month.'
   },
   {
-    icon: Users,
     stat: '81%',
     label: 'Search Before Buying',
     description: '81% of shoppers research online before purchasing. If you are not online, you are invisible to them.'
   },
   {
-    icon: Shield,
     stat: '75%',
     label: 'Judge by Website',
     description: '75% of consumers judge business credibility by their website. No site or a bad site costs you sales.'
   },
   {
-    icon: Clock,
     stat: '4-6hrs',
     label: 'Time Saved Weekly',
     description: 'Automated forms and FAQs save 4-6 hours per week answering the same questions manually.'
   },
   {
-    icon: DollarSign,
     stat: '$2.87',
     label: 'Per $1 Spent',
     description: 'Digital marketing returns $2.87 for every dollar spent—higher than traditional advertising.'
@@ -59,12 +51,8 @@ export function Benefits() {
           {benefits.map((benefit, index) => (
             <div
               key={index}
-              className="group relative bg-white rounded-lg p-6 sm:p-8 border border-gray-200 hover:border-emerald-400 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/10"
+              className="bg-white rounded-lg p-6 sm:p-8 border border-gray-200 hover:border-emerald-400 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/10"
             >
-              <div className="w-12 h-12 sm:w-12 sm:h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-lg flex items-center justify-center flex-shrink-0 mb-4 sm:mb-4 group-hover:scale-110 transition-transform">
-                <benefit.icon className="w-6 h-6 sm:w-6 sm:h-6 text-white" />
-              </div>
-
               <div className="text-4xl sm:text-4xl font-black text-emerald-600 mb-2">
                 {benefit.stat}
               </div>
@@ -77,7 +65,6 @@ export function Benefits() {
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

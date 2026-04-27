@@ -1,5 +1,5 @@
 import { Footer } from '../components/Footer';
-import { Target, Users, Zap, Award, Heart, TrendingUp } from 'lucide-react';
+import { Heart, TrendingUp } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export function About() {
@@ -51,9 +51,6 @@ export function About() {
             <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">Our Values</h2>
             <div className="grid md:grid-cols-3 gap-8">
               <div className="bg-white border border-gray-200 rounded-2xl p-8 hover:border-emerald-400 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/10">
-                <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-cyan-500 rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-emerald-500/25">
-                  <Target className="w-8 h-8 text-white" />
-                </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Specialist Focus</h3>
                 <p className="text-gray-600 leading-relaxed">
                   We only build for local service businesses. This laser focus means we know exactly what works for plumbers, HVAC companies, landscapers, and contractors.
@@ -61,9 +58,6 @@ export function About() {
               </div>
 
               <div className="bg-white border border-gray-200 rounded-2xl p-8 hover:border-emerald-400 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/10">
-                <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-cyan-500 rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-emerald-500/25">
-                  <Users className="w-8 h-8 text-white" />
-                </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Real Results</h3>
                 <p className="text-gray-600 leading-relaxed">
                   We measure success in leads, bookings, and revenue—not page views. One HVAC client jumped from 3 to 17 leads per week. That's what matters.
@@ -71,9 +65,6 @@ export function About() {
               </div>
 
               <div className="bg-white border border-gray-200 rounded-2xl p-8 hover:border-emerald-400 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/10">
-                <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-cyan-500 rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-emerald-500/25">
-                  <Zap className="w-8 h-8 text-white" />
-                </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Speed to Market</h3>
                 <p className="text-gray-600 leading-relaxed">
                   7-day turnaround while agencies take 8 weeks. Every day without a site costs you leads. We get you online fast so you start competing immediately.

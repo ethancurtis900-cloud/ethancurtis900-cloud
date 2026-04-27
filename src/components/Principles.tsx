@@ -1,23 +1,17 @@
-import { Heart, Handshake, TrendingUp, Shield } from 'lucide-react';
-
 const principles = [
   {
-    icon: Heart,
     title: 'We Care About Your Dream',
     description: 'Your business is more than a job—it\'s your livelihood, your legacy. We treat every project like it\'s our own, because we understand what\'s at stake for you and your family.'
   },
   {
-    icon: Handshake,
     title: 'True Partnership, No Jargon',
     description: 'We speak your language, not tech-speak. You get a partner who listens, explains clearly, and works alongside you every step of the way—no confusion, no surprises.'
   },
   {
-    icon: TrendingUp,
     title: 'Built to Help You Grow',
     description: 'Every small business starts somewhere. We design websites that scale with you—from your first customer to your hundredth, we\'re here to support your journey.'
   },
   {
-    icon: Shield,
     title: 'Your Success Is Our Reputation',
     description: 'When you win, we win. We stake our reputation on delivering results that matter—more customers, more revenue, and more peace of mind for you.'
   }
@@ -43,21 +37,14 @@ export function Principles() {
           {principles.map((principle, index) => (
             <div
               key={index}
-              className="group relative bg-white rounded-lg p-6 sm:p-8 border border-gray-200 hover:border-emerald-400 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/10"
+              className="bg-white rounded-lg p-6 sm:p-8 border border-gray-200 hover:border-emerald-400 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/10"
             >
-              <div className="flex items-start gap-4">
-                <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                  <principle.icon className="w-7 h-7 sm:w-8 sm:h-8 text-white" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">
-                    {principle.title}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed text-base sm:text-lg">
-                    {principle.description}
-                  </p>
-                </div>
-              </div>
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">
+                {principle.title}
+              </h3>
+              <p className="text-gray-600 leading-relaxed text-base sm:text-lg">
+                {principle.description}
+              </p>
             </div>
           ))}
         </div>

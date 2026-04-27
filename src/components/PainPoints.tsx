@@ -1,39 +1,33 @@
-import { AlertTriangle, TrendingDown, UserX, Clock, ShieldOff, Target, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const painPoints = [
   {
-    icon: UserX,
     title: 'Invisible to Customers',
     description: 'Most consumers research online before buying. Without a website, you\'re completely off the radar when potential customers are actively searching for your services.',
     impact: 'Lost Sales'
   },
   {
-    icon: TrendingDown,
     title: 'Competitors Win 24/7',
     description: 'While you\'re offline, competitors with websites capture sales around the clock. Every hour of delay costs you revenue.',
     impact: 'Market Share'
   },
   {
-    icon: ShieldOff,
     title: 'Zero Credibility',
     description: 'Consumers judge business legitimacy by online presence. No site means no trust. Customers assume you\'re not a serious business.',
     impact: 'Trust Gap'
   },
   {
-    icon: Target,
     title: 'No Brand Control',
     description: 'Relying on social media? Algorithm changes kill your reach instantly. You own nothing. A website is yours forever.',
     impact: 'Vulnerability'
   },
   {
-    icon: Clock,
     title: 'Stuck in Business Hours',
     description: 'You close at 5pm. Your website never does. Leads pour in 24/7 with the right site. You\'re leaving money on the table.',
     impact: 'Lost Leads'
   },
   {
-    icon: AlertTriangle,
     title: 'Getting Lapped',
     description: 'Every day you wait, competitors pull further ahead. The gap only widens. Act now or fade into obscurity.',
     impact: 'Irrelevance'
@@ -60,17 +54,13 @@ export function PainPoints() {
           {painPoints.map((point, index) => (
             <div
               key={index}
-              className="group relative bg-white rounded-lg p-5 sm:p-6 border border-gray-200 hover:border-emerald-400 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/10"
+              className="relative bg-white rounded-lg p-5 sm:p-6 border border-gray-200 hover:border-emerald-400 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/10"
             >
               <div className="absolute top-0 right-0 px-3 py-1 bg-red-500 text-white text-xs font-bold rounded-bl-lg rounded-tr-lg">
                 {point.impact}
               </div>
 
-              <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-red-600 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <point.icon className="w-6 h-6 text-white" />
-              </div>
-
-              <h3 className="text-lg font-bold text-gray-900 mb-2">
+              <h3 className="text-lg font-bold text-gray-900 mb-2 pr-16">
                 {point.title}
               </h3>
 
@@ -91,10 +81,10 @@ export function PainPoints() {
             </p>
             <Link
               to="/products"
-              className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 sm:px-8 sm:py-4 rounded-md font-semibold transition-all transform hover:translate-x-1 text-base sm:text-base touch-manipulation"
+              className="inline-flex items-center gap-2 bg-gray-900 hover:bg-black text-white px-8 py-4 rounded-md font-semibold transition-all transform hover:translate-x-1 text-base touch-manipulation"
             >
               Launch Now, Compete Today
-              <ArrowRight className="w-5 h-5 sm:w-5 sm:h-5" />
+              <ArrowRight className="w-5 h-5" />
             </Link>
           </div>
         </div>
