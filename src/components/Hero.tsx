@@ -20,7 +20,7 @@ export function Hero() {
             <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-5 sm:mb-4 md:mb-5 tracking-tight">
               <span className="text-gray-900">Websites for</span>
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 via-cyan-500 to-blue-500 animate-gradient">Local Service Businesses</span>
+              <span className="text-gray-900">Local Service Businesses</span>
             </h1>
 
             <p className="text-lg sm:text-lg md:text-xl text-gray-600 mb-7 sm:mb-6 md:mb-7 leading-relaxed max-w-xl">

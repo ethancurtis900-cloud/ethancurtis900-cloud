@@ -76,7 +76,7 @@ export function Navbar() {
                 )}
                 <Link
                   to="/dashboard"
-                  className="flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-white px-6 py-2.5 rounded-xl font-semibold transition-all shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 hover:scale-105"
+                  className="flex items-center gap-2 bg-gray-900 hover:bg-black text-white px-6 py-2.5 rounded-xl font-semibold transition-all shadow-lg shadow-black/20 hover:scale-105"
                 >
                   <User className="w-4 h-4" />
                   Dashboard
@@ -96,7 +96,7 @@ export function Navbar() {
                 </Link>
                 <Link
                   to="/signup"
-                  className="bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-white px-6 py-2.5 rounded-xl font-semibold transition-all shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 hover:scale-105"
+                  className="bg-gray-900 hover:bg-black text-white px-6 py-2.5 rounded-xl font-semibold transition-all shadow-lg shadow-black/20 hover:scale-105"
                 >
                   Sign Up
                 </Link>
@@ -139,7 +139,7 @@ export function Navbar() {
                 <Link
                   to="/dashboard"
                   onClick={() => setIsMenuOpen(false)}
-                  className="flex items-center justify-center gap-2 text-center bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-white px-6 py-3.5 rounded-xl font-semibold transition-all shadow-lg shadow-emerald-500/25 text-base touch-manipulation"
+                  className="flex items-center justify-center gap-2 text-center bg-gray-900 hover:bg-black text-white px-6 py-3.5 rounded-xl font-semibold transition-all shadow-lg shadow-black/20 text-base touch-manipulation"
                 >
                   <User className="w-4 h-4" />
                   Dashboard
@@ -161,7 +161,7 @@ export function Navbar() {
                 <Link
                   to="/signup"
                   onClick={() => setIsMenuOpen(false)}
-                  className="block text-center bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-white px-6 py-3.5 rounded-xl font-semibold transition-all shadow-lg shadow-emerald-500/25 text-base touch-manipulation"
+                  className="block text-center bg-gray-900 hover:bg-black text-white px-6 py-3.5 rounded-xl font-semibold transition-all shadow-lg shadow-black/20 text-base touch-manipulation"
                 >
                   Sign Up
                 </Link>
