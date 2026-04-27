@@ -17,10 +17,10 @@ export function Navbar() {
   const navLinkClass = (path: string) => {
     const active = isActive(path);
     return [
-      'text-slate-300 hover:text-white font-medium transition-colors relative',
+      'text-gray-600 hover:text-gray-900 font-medium transition-colors relative',
       'after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-gradient-to-r after:from-emerald-500 after:to-cyan-500',
       active
-        ? 'text-white after:w-full'
+        ? 'text-gray-900 after:w-full'
         : 'after:w-0 hover:after:w-full hover:after:transition-all',
     ].join(' ');
   };
@@ -30,22 +30,22 @@ export function Navbar() {
     return [
       'block px-4 py-3 text-base font-medium rounded-lg transition-colors touch-manipulation',
       active
-        ? 'text-white bg-slate-800/70 border-l-2 border-emerald-500'
-        : 'text-slate-300 hover:text-white hover:bg-slate-800/50',
+        ? 'text-gray-900 bg-gray-100 border-l-2 border-emerald-500'
+        : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100',
     ].join(' ');
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-950/90 backdrop-blur-xl border-b border-slate-800/50">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-xl border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
           <Link to="/" className="flex items-center gap-2 sm:gap-3 group">
             <div className="shadow-lg shadow-emerald-500/25 group-hover:shadow-emerald-500/40 transition-all group-hover:scale-105 rounded-xl">
               <Logo className="w-9 h-9 sm:w-10 sm:h-10" />
             </div>
-            <div className="text-lg sm:text-xl font-bold text-white">
+            <div className="text-lg sm:text-xl font-bold text-gray-900">
               Metro<span className="relative">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">Nexa</span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-cyan-500">Nexa</span>
                 <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-emerald-500 to-cyan-500"></div>
               </span>
             </div>
@@ -66,8 +66,8 @@ export function Navbar() {
                     to="/admin"
                     className={`flex items-center gap-2 font-medium transition-colors px-4 py-2 rounded-lg ${
                       isActive('/admin')
-                        ? 'text-white bg-slate-800/70'
-                        : 'text-slate-300 hover:text-white hover:bg-slate-800/50'
+                        ? 'text-gray-900 bg-gray-100'
+                        : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
                     }`}
                   >
                     <Shield className="w-4 h-4" />
@@ -88,8 +88,8 @@ export function Navbar() {
                   to="/login"
                   className={`font-medium transition-colors px-4 py-2 rounded-lg ${
                     isActive('/login')
-                      ? 'text-white bg-slate-800/70'
-                      : 'text-slate-300 hover:text-white hover:bg-slate-800/50'
+                      ? 'text-gray-900 bg-gray-100'
+                      : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
                   }`}
                 >
                   Sign In
@@ -106,7 +106,7 @@ export function Navbar() {
 
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-3 text-slate-300 hover:text-white transition-colors touch-manipulation"
+            className="md:hidden p-3 text-gray-600 hover:text-gray-900 transition-colors touch-manipulation"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
@@ -114,7 +114,7 @@ export function Navbar() {
         </div>
 
         {isMenuOpen && (
-          <div className="md:hidden py-4 space-y-2 border-t border-slate-800/50">
+          <div className="md:hidden py-4 space-y-2 border-t border-gray-200">
             <Link to="/" onClick={() => setIsMenuOpen(false)} className={mobileNavLinkClass('/')}>Home</Link>
             <Link to="/products" onClick={() => setIsMenuOpen(false)} className={mobileNavLinkClass('/products')}>Products</Link>
             <Link to="/faq" onClick={() => setIsMenuOpen(false)} className={mobileNavLinkClass('/faq')}>FAQs</Link>
@@ -128,8 +128,8 @@ export function Navbar() {
                     onClick={() => setIsMenuOpen(false)}
                     className={`flex items-center justify-center gap-2 text-center px-6 py-3 rounded-lg font-medium transition-colors touch-manipulation ${
                       isActive('/admin')
-                        ? 'text-white bg-slate-800/70 border-l-2 border-emerald-500'
-                        : 'text-slate-300 hover:text-white hover:bg-slate-800/50'
+                        ? 'text-gray-900 bg-gray-100 border-l-2 border-emerald-500'
+                        : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
                     }`}
                   >
                     <Shield className="w-4 h-4" />
@@ -152,8 +152,8 @@ export function Navbar() {
                   onClick={() => setIsMenuOpen(false)}
                   className={`block text-center px-6 py-3 rounded-lg font-medium transition-colors touch-manipulation ${
                     isActive('/login')
-                      ? 'text-white bg-slate-800/70 border-l-2 border-emerald-500'
-                      : 'text-slate-300 hover:text-white hover:bg-slate-800/50'
+                      ? 'text-gray-900 bg-gray-100 border-l-2 border-emerald-500'
+                      : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
                   }`}
                 >
                   Sign In

@@ -47,7 +47,7 @@ function AppContent() {
   }, [navigate, location])
 
   return (
-    <div className="min-h-screen bg-slate-950">
+    <div className="min-h-screen bg-white">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

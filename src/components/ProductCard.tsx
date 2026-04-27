@@ -18,10 +18,10 @@ export function ProductCard({ product }: ProductCardProps) {
   }
 
   return (
-    <Card className="w-full max-w-md bg-slate-900/80 backdrop-blur-xl border-slate-700/50 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-500/20 group">
+    <Card className="w-full max-w-md bg-white border-gray-200 hover:border-emerald-400 transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-500/10 group">
       <CardHeader className="space-y-3 pb-6">
-        <CardTitle className="text-3xl font-bold text-white group-hover:text-emerald-400 transition-colors">{product.name}</CardTitle>
-        <CardDescription className="text-5xl font-black bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">
+        <CardTitle className="text-3xl font-bold text-gray-900 group-hover:text-emerald-600 transition-colors">{product.name}</CardTitle>
+        <CardDescription className="text-5xl font-black bg-gradient-to-r from-emerald-500 via-cyan-500 to-blue-500 bg-clip-text text-transparent">
           {formatCurrency(product.price, product.currency)}
         </CardDescription>
       </CardHeader>
@@ -29,10 +29,10 @@ export function ProductCard({ product }: ProductCardProps) {
         <div className="space-y-4">
           {features.map((feature, index) => (
             <div key={index} className="flex items-start gap-3">
-              <div className="w-5 h-5 rounded-full bg-emerald-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                <Check className="h-3 w-3 text-emerald-400" />
+              <div className="w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <Check className="h-3 w-3 text-emerald-600" />
               </div>
-              <p className="text-sm text-slate-300 leading-relaxed">
+              <p className="text-sm text-gray-600 leading-relaxed">
                 {feature.trim()}
               </p>
             </div>

@@ -87,69 +87,69 @@ export function Contact() {
   };
 
   return (
-    <section className="py-8 sm:py-16 md:py-20 bg-gradient-to-b from-slate-900 via-slate-950 to-slate-900 relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-64 h-64 sm:w-96 sm:h-96 lg:w-[600px] lg:h-[600px] bg-gradient-to-br from-emerald-500/10 to-cyan-500/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 left-0 w-64 h-64 sm:w-96 sm:h-96 lg:w-[600px] lg:h-[600px] bg-gradient-to-tr from-blue-500/10 to-emerald-500/10 rounded-full blur-3xl"></div>
+    <section className="py-8 sm:py-16 md:py-20 bg-white relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-64 h-64 sm:w-96 sm:h-96 lg:w-[600px] lg:h-[600px] bg-emerald-50 rounded-full blur-3xl opacity-60"></div>
+      <div className="absolute bottom-0 left-0 w-64 h-64 sm:w-96 sm:h-96 lg:w-[600px] lg:h-[600px] bg-cyan-50 rounded-full blur-3xl opacity-60"></div>
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center mb-8 sm:mb-12 md:mb-16">
-          <div className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 rounded-full text-xs sm:text-sm font-semibold mb-3 sm:mb-4">
+          <div className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 bg-emerald-100 text-emerald-700 rounded-full text-xs sm:text-sm font-semibold mb-3 sm:mb-4">
             Get In Touch
           </div>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 sm:mb-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3 sm:mb-4">
             Contact Us
           </h1>
-          <p className="text-base sm:text-lg md:text-xl text-slate-400 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
             Ready to transform your online presence? Get in touch and let's discuss your project.
           </p>
         </div>
 
-        <div className="bg-slate-900/80 backdrop-blur-xl rounded-2xl sm:rounded-3xl shadow-2xl border border-slate-800/50 overflow-hidden">
+        <div className="bg-white rounded-2xl sm:rounded-3xl shadow-xl border border-gray-200 overflow-hidden">
           <div className="grid md:grid-cols-5 gap-0">
-            <div className="md:col-span-2 bg-gradient-to-br from-slate-800 to-slate-900 p-8 sm:p-8 md:p-10 text-white md:border-r border-slate-700/50">
-              <h3 className="text-2xl sm:text-2xl font-bold mb-6 sm:mb-8">Contact Info</h3>
+            <div className="md:col-span-2 bg-gray-50 p-8 sm:p-8 md:p-10 text-gray-900 md:border-r border-gray-200">
+              <h3 className="text-2xl sm:text-2xl font-bold mb-6 sm:mb-8 text-gray-900">Contact Info</h3>
 
               <div className="space-y-6 sm:space-y-8">
                 <div className="group">
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 bg-emerald-500/10 rounded-lg flex items-center justify-center group-hover:bg-emerald-500/20 transition-colors">
-                      <Mail className="w-5 h-5 text-emerald-400" />
+                    <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center group-hover:bg-emerald-200 transition-colors">
+                      <Mail className="w-5 h-5 text-emerald-600" />
                     </div>
-                    <span className="font-semibold text-lg">Email</span>
+                    <span className="font-semibold text-lg text-gray-900">Email</span>
                   </div>
-                  <a href="mailto:contact@metronexa.com" className="text-slate-400 hover:text-emerald-400 transition-colors ml-13 block">
+                  <a href="mailto:contact@metronexa.com" className="text-gray-500 hover:text-emerald-600 transition-colors ml-13 block">
                     contact@metronexa.com
                   </a>
                 </div>
 
                 <div className="group">
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 bg-cyan-500/10 rounded-lg flex items-center justify-center group-hover:bg-cyan-500/20 transition-colors">
-                      <Instagram className="w-5 h-5 text-cyan-400" />
+                    <div className="w-10 h-10 bg-cyan-100 rounded-lg flex items-center justify-center group-hover:bg-cyan-200 transition-colors">
+                      <Instagram className="w-5 h-5 text-cyan-600" />
                     </div>
-                    <span className="font-semibold text-lg">Instagram</span>
+                    <span className="font-semibold text-lg text-gray-900">Instagram</span>
                   </div>
-                  <a href="https://instagram.com/metronexaweb" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-cyan-400 transition-colors ml-13 block">
+                  <a href="https://instagram.com/metronexaweb" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-cyan-600 transition-colors ml-13 block">
                     @metronexaweb
                   </a>
                 </div>
               </div>
 
-              <div className="mt-12 pt-8 border-t border-slate-700/50">
-                <div className="flex items-center gap-2 text-emerald-400 mb-2">
-                  <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+              <div className="mt-12 pt-8 border-t border-gray-200">
+                <div className="flex items-center gap-2 text-emerald-600 mb-2">
+                  <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
                   <span className="font-semibold text-sm">Quick Response</span>
                 </div>
-                <p className="text-slate-400 text-sm">
+                <p className="text-gray-500 text-sm">
                   We typically respond within 24 hours.
                 </p>
               </div>
             </div>
 
-            <div className="md:col-span-3 p-8 sm:p-8 md:p-10 bg-gradient-to-br from-slate-850/50 to-slate-900/50">
+            <div className="md:col-span-3 p-8 sm:p-8 md:p-10 bg-white">
               <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-semibold text-white mb-2">
+                  <label htmlFor="name" className="block text-sm font-semibold text-gray-800 mb-2">
                     Your Name
                   </label>
                   <input
@@ -159,13 +159,13 @@ export function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 text-white rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-all placeholder:text-slate-500"
+                    className="w-full px-4 py-3 bg-white border border-gray-300 text-gray-900 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-all placeholder:text-gray-400"
                     placeholder="John Doe"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-semibold text-white mb-2">
+                  <label htmlFor="email" className="block text-sm font-semibold text-gray-800 mb-2">
                     Email Address
                   </label>
                   <input
@@ -175,13 +175,13 @@ export function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 text-white rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-all placeholder:text-slate-500"
+                    className="w-full px-4 py-3 bg-white border border-gray-300 text-gray-900 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-all placeholder:text-gray-400"
                     placeholder="john@example.com"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-semibold text-white mb-2">
+                  <label htmlFor="phone" className="block text-sm font-semibold text-gray-800 mb-2">
                     Phone Number
                   </label>
                   <input
@@ -190,13 +190,13 @@ export function Contact() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 text-white rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-all placeholder:text-slate-500"
+                    className="w-full px-4 py-3 bg-white border border-gray-300 text-gray-900 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-all placeholder:text-gray-400"
                     placeholder="+1 (234) 567-890"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-semibold text-white mb-2">
+                  <label htmlFor="message" className="block text-sm font-semibold text-gray-800 mb-2">
                     Tell Us About Your Project
                   </label>
                   <textarea
@@ -206,7 +206,7 @@ export function Contact() {
                     onChange={handleChange}
                     required
                     rows={4}
-                    className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 text-white rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-all resize-none placeholder:text-slate-500"
+                    className="w-full px-4 py-3 bg-white border border-gray-300 text-gray-900 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-all resize-none placeholder:text-gray-400"
                     placeholder="I need help with..."
                   />
                 </div>
@@ -232,13 +232,13 @@ export function Contact() {
                 </button>
 
                 {submitted && (
-                  <div className="bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 px-4 py-3 rounded-xl text-center font-semibold">
+                  <div className="bg-emerald-50 border border-emerald-200 text-emerald-700 px-4 py-3 rounded-xl text-center font-semibold">
                     Thanks! We'll be in touch soon.
                   </div>
                 )}
 
                 {error && (
-                  <div className="bg-red-500/10 border border-red-500/30 text-red-400 px-4 py-3 rounded-xl text-center font-semibold">
+                  <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-xl text-center font-semibold">
                     {error}
                   </div>
                 )}

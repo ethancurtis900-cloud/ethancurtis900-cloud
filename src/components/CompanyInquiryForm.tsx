@@ -112,16 +112,16 @@ export function CompanyInquiryForm() {
   if (success) {
     return (
       <div className="max-w-2xl mx-auto text-center py-12">
-        <div className="w-20 h-20 bg-emerald-500/10 rounded-full flex items-center justify-center mx-auto mb-6">
-          <CheckCircle2 className="w-10 h-10 text-emerald-500" />
+        <div className="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6">
+          <CheckCircle2 className="w-10 h-10 text-emerald-600" />
         </div>
-        <h2 className="text-3xl font-bold text-white mb-4">Thank You!</h2>
-        <p className="text-slate-400 text-lg mb-8">
+        <h2 className="text-3xl font-bold text-gray-900 mb-4">Thank You!</h2>
+        <p className="text-gray-600 text-lg mb-8">
           We've received your inquiry and will get back to you within 24 hours.
         </p>
         <Button
           onClick={() => setSuccess(false)}
-          className="bg-gradient-to-r from-emerald-600 to-cyan-600 hover:from-emerald-700 hover:to-cyan-700"
+          className="bg-gradient-to-r from-emerald-600 to-cyan-600 hover:from-emerald-700 hover:to-cyan-700 text-white"
         >
           Submit Another Inquiry
         </Button>
@@ -130,16 +130,16 @@ export function CompanyInquiryForm() {
   }
 
   return (
-    <Card className="max-w-3xl mx-auto bg-slate-800/50 backdrop-blur-xl border-slate-700/50 p-8">
+    <Card className="max-w-3xl mx-auto bg-white border-gray-200 p-8 shadow-lg">
       <div className="text-center mb-8">
-        <h2 className="text-3xl font-bold text-white mb-3">Get Started Today</h2>
-        <p className="text-slate-400">
+        <h2 className="text-3xl font-bold text-gray-900 mb-3">Get Started Today</h2>
+        <p className="text-gray-600">
           Tell us about your company and we'll create a custom solution for you.
         </p>
       </div>
 
       {error && (
-        <Alert className="mb-6 bg-red-500/10 border-red-500/50 text-red-400">
+        <Alert className="mb-6 bg-red-50 border-red-200 text-red-700">
           {error}
         </Alert>
       )}
@@ -147,11 +147,11 @@ export function CompanyInquiryForm() {
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="grid md:grid-cols-2 gap-6">
           <div className="space-y-2">
-            <Label htmlFor="firstName" className="text-slate-300">
+            <Label htmlFor="firstName" className="text-gray-700">
               First Name *
             </Label>
             <div className="relative">
-              <User className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-500" />
+              <User className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
               <Input
                 id="firstName"
                 name="firstName"
@@ -159,18 +159,18 @@ export function CompanyInquiryForm() {
                 required
                 value={formData.firstName}
                 onChange={handleChange}
-                className="pl-10 bg-slate-900/50 border-slate-700 text-white focus:border-emerald-500"
+                className="pl-10 bg-white border-gray-300 text-gray-900 focus:border-emerald-500"
                 placeholder="John"
               />
             </div>
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="lastName" className="text-slate-300">
+            <Label htmlFor="lastName" className="text-gray-700">
               Last Name *
             </Label>
             <div className="relative">
-              <User className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-500" />
+              <User className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
               <Input
                 id="lastName"
                 name="lastName"
@@ -178,7 +178,7 @@ export function CompanyInquiryForm() {
                 required
                 value={formData.lastName}
                 onChange={handleChange}
-                className="pl-10 bg-slate-900/50 border-slate-700 text-white focus:border-emerald-500"
+                className="pl-10 bg-white border-gray-300 text-gray-900 focus:border-emerald-500"
                 placeholder="Doe"
               />
             </div>
@@ -186,11 +186,11 @@ export function CompanyInquiryForm() {
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="email" className="text-slate-300">
+          <Label htmlFor="email" className="text-gray-700">
             Email *
           </Label>
           <div className="relative">
-            <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-500" />
+            <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
             <Input
               id="email"
               name="email"
@@ -198,18 +198,18 @@ export function CompanyInquiryForm() {
               required
               value={formData.email}
               onChange={handleChange}
-              className="pl-10 bg-slate-900/50 border-slate-700 text-white focus:border-emerald-500"
+              className="pl-10 bg-white border-gray-300 text-gray-900 focus:border-emerald-500"
               placeholder="john@company.com"
             />
           </div>
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="phone" className="text-slate-300">
+          <Label htmlFor="phone" className="text-gray-700">
             Phone Number *
           </Label>
           <div className="relative">
-            <Phone className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-500" />
+            <Phone className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
             <Input
               id="phone"
               name="phone"
@@ -217,18 +217,18 @@ export function CompanyInquiryForm() {
               required
               value={formData.phone}
               onChange={handleChange}
-              className="pl-10 bg-slate-900/50 border-slate-700 text-white focus:border-emerald-500"
+              className="pl-10 bg-white border-gray-300 text-gray-900 focus:border-emerald-500"
               placeholder="(555) 123-4567"
             />
           </div>
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="companyName" className="text-slate-300">
+          <Label htmlFor="companyName" className="text-gray-700">
             Company Name *
           </Label>
           <div className="relative">
-            <Building2 className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-500" />
+            <Building2 className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
             <Input
               id="companyName"
               name="companyName"
@@ -236,14 +236,14 @@ export function CompanyInquiryForm() {
               required
               value={formData.companyName}
               onChange={handleChange}
-              className="pl-10 bg-slate-900/50 border-slate-700 text-white focus:border-emerald-500"
+              className="pl-10 bg-white border-gray-300 text-gray-900 focus:border-emerald-500"
               placeholder="Your Company LLC"
             />
           </div>
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="companyType" className="text-slate-300">
+          <Label htmlFor="companyType" className="text-gray-700">
             Company Type *
           </Label>
           <select
@@ -252,7 +252,7 @@ export function CompanyInquiryForm() {
             required
             value={formData.companyType}
             onChange={handleChange}
-            className="w-full px-3 py-2 bg-slate-900/50 border border-slate-700 rounded-md text-white focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
+            className="w-full px-3 py-2 bg-white border border-gray-300 rounded-md text-gray-900 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
           >
             <option value="">Select your industry</option>
             {companyTypes.map(type => (
@@ -262,7 +262,7 @@ export function CompanyInquiryForm() {
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="message" className="text-slate-300">
+          <Label htmlFor="message" className="text-gray-700">
             Tell Us About Your Project
           </Label>
           <textarea
@@ -271,7 +271,7 @@ export function CompanyInquiryForm() {
             rows={4}
             value={formData.message}
             onChange={handleChange}
-            className="w-full px-3 py-2 bg-slate-900/50 border border-slate-700 rounded-md text-white focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 resize-none"
+            className="w-full px-3 py-2 bg-white border border-gray-300 rounded-md text-gray-900 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 resize-none"
             placeholder="What are your goals? What features do you need?"
           />
         </div>

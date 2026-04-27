@@ -48,20 +48,20 @@ const testimonials = [
 
 export function TestimonialsPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-metro-950 via-metro-900 to-metro-950">
+    <div className="min-h-screen bg-white">
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <span className="inline-block px-4 py-2 bg-accent-600/20 text-accent-300 rounded-full text-xs font-space-mono font-bold tracking-widest uppercase mb-4">
+            <span className="inline-block px-4 py-2 bg-emerald-100 text-emerald-700 rounded-full text-xs font-bold tracking-widest uppercase mb-4">
               Success Stories
             </span>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
-              <span className="text-white">Real Results from </span>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">
+              <span className="text-gray-900">Real Results from </span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-cyan-500">
                 Real Businesses
               </span>
             </h1>
-            <p className="text-xl text-metro-300 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Don't just take our word for it. Hear from small business owners who trusted us to build their online presence and are now reaping the rewards.
             </p>
           </div>
@@ -70,28 +70,28 @@ export function TestimonialsPage() {
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className="bg-gradient-to-br from-metro-800 to-metro-900 rounded-xl p-8 border border-metro-700 hover:border-accent-600 transition-all duration-300 hover:shadow-xl hover:shadow-accent-600/20"
+                className="bg-white rounded-xl p-8 border border-gray-200 hover:border-emerald-400 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/10"
               >
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-accent-600 to-accent-700 flex items-center justify-center">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-emerald-500 to-emerald-600 flex items-center justify-center">
                     <User className="w-8 h-8 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-white">{testimonial.name}</h3>
-                    <p className="text-sm text-accent-400 font-semibold">{testimonial.business}</p>
-                    <p className="text-xs text-metro-400">{testimonial.location}</p>
+                    <h3 className="text-lg font-bold text-gray-900">{testimonial.name}</h3>
+                    <p className="text-sm text-emerald-600 font-semibold">{testimonial.business}</p>
+                    <p className="text-xs text-gray-500">{testimonial.location}</p>
                   </div>
                 </div>
 
                 <div className="flex gap-1 mb-4">
                   {Array.from({ length: testimonial.rating }).map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-accent-400 text-accent-400" />
+                    <Star key={i} className="w-5 h-5 fill-emerald-500 text-emerald-500" />
                   ))}
                 </div>
 
                 <div className="relative">
-                  <Quote className="absolute -top-2 -left-2 w-8 h-8 text-accent-600/20" />
-                  <p className="text-metro-300 leading-relaxed pl-6">
+                  <Quote className="absolute -top-2 -left-2 w-8 h-8 text-emerald-500/20" />
+                  <p className="text-gray-600 leading-relaxed pl-6">
                     {testimonial.text}
                   </p>
                 </div>
@@ -99,14 +99,14 @@ export function TestimonialsPage() {
             ))}
           </div>
 
-          <div className="bg-gradient-to-br from-accent-600/20 to-accent-600/10 border border-accent-600/30 rounded-2xl p-12 text-center">
-            <h2 className="text-3xl font-bold text-white mb-4">Ready to Write Your Success Story?</h2>
-            <p className="text-metro-300 mb-8 max-w-2xl mx-auto leading-relaxed">
+          <div className="bg-gradient-to-br from-emerald-50 to-cyan-50 border border-emerald-200 rounded-2xl p-12 text-center">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Ready to Write Your Success Story?</h2>
+            <p className="text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
               Join these thriving businesses and start attracting more customers online. Your story could be next.
             </p>
             <a
               href="/products"
-              className="inline-flex items-center gap-2 bg-accent-600 hover:bg-accent-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105"
+              className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105"
             >
               Get Started Today
             </a>

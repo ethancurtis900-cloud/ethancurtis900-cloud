@@ -23,22 +23,19 @@ const principles = [
     icon: Zap,
     title: 'Speed Matters',
     description: 'In the digital world, speed is everything. We deliver fast, responsive experiences that convert.',
-    gradient: 'from-violet-400 to-violet-600',
+    gradient: 'from-cyan-400 to-cyan-600',
   },
 ];
 
 export function Portfolio() {
   return (
-    <section id="vision" className="py-8 sm:py-16 md:py-20 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-96 h-96 bg-cyan-500 rounded-full blur-3xl opacity-5"></div>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-emerald-500 rounded-full blur-3xl opacity-5"></div>
-
+    <section id="vision" className="py-8 sm:py-16 md:py-20 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center mb-8 sm:mb-12 md:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 sm:mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3 sm:mb-4">
             Our Guiding Principles
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-slate-300 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
             Built on a foundation of excellence, innovation, and unwavering commitment to your success.
           </p>
         </div>
@@ -47,17 +44,17 @@ export function Portfolio() {
           {principles.map((principle, index) => (
             <div
               key={index}
-              className="group relative bg-slate-900/50 backdrop-blur-sm rounded-xl sm:rounded-2xl border border-slate-800 overflow-hidden hover:border-cyan-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/10 p-6 sm:p-8"
+              className="group relative bg-white rounded-xl sm:rounded-2xl border border-gray-200 overflow-hidden hover:border-emerald-400 transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-500/10 p-6 sm:p-8"
             >
               <div className={`w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br ${principle.gradient} rounded-xl flex items-center justify-center mb-4 sm:mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                 <principle.icon className="w-7 h-7 sm:w-8 sm:h-8 text-white" />
               </div>
 
-              <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4">
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">
                 {principle.title}
               </h3>
 
-              <p className="text-slate-300 leading-relaxed text-base sm:text-lg">
+              <p className="text-gray-600 leading-relaxed text-base sm:text-lg">
                 {principle.description}
               </p>
             </div>

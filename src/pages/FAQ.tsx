@@ -12,16 +12,16 @@ function FAQItem({ question, answer }: FAQItemProps) {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <div className="border border-slate-800/50 bg-slate-900/50 backdrop-blur-sm rounded-xl overflow-hidden transition-all hover:border-emerald-500/30">
+    <div className="border border-gray-200 bg-white rounded-xl overflow-hidden transition-all hover:border-emerald-400">
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="w-full px-6 py-5 flex items-center justify-between text-left group"
       >
-        <h3 className="text-lg font-semibold text-white group-hover:text-emerald-400 transition-colors">
+        <h3 className="text-lg font-semibold text-gray-900 group-hover:text-emerald-600 transition-colors">
           {question}
         </h3>
         <ChevronDown
-          className={`w-5 h-5 text-emerald-400 transition-transform duration-300 ${
+          className={`w-5 h-5 text-emerald-500 transition-transform duration-300 ${
             isOpen ? 'rotate-180' : ''
           }`}
         />
@@ -31,7 +31,7 @@ function FAQItem({ question, answer }: FAQItemProps) {
           isOpen ? 'max-h-96' : 'max-h-0'
         }`}
       >
-        <div className="px-6 pb-5 text-slate-400 leading-relaxed">
+        <div className="px-6 pb-5 text-gray-600 leading-relaxed">
           {answer}
         </div>
       </div>
@@ -84,27 +84,18 @@ export function FAQ() {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 relative overflow-hidden">
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute inset-0" style={{
-          backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(16, 185, 129, 0.15) 1px, transparent 0)',
-          backgroundSize: '40px 40px'
-        }}></div>
-      </div>
-      <div className="absolute top-0 right-0 w-64 h-64 sm:w-96 sm:h-96 lg:w-[600px] lg:h-[600px] bg-gradient-to-br from-emerald-500/20 to-cyan-500/20 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 left-0 w-64 h-64 sm:w-96 sm:h-96 lg:w-[600px] lg:h-[600px] bg-gradient-to-tr from-blue-500/20 to-emerald-500/20 rounded-full blur-3xl"></div>
-
+    <div className="min-h-screen bg-white relative overflow-hidden">
       <div className="max-w-4xl mx-auto relative z-10 pt-24 py-16 sm:py-24 md:py-32 px-4">
         <div className="text-center mb-12 sm:mb-16 md:mb-20">
-          <div className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 rounded-full text-xs sm:text-sm font-semibold mb-4 sm:mb-6">
+          <div className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 bg-emerald-100 text-emerald-700 rounded-full text-xs sm:text-sm font-semibold mb-4 sm:mb-6">
             Got Questions?
           </div>
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 tracking-tight">
-            <span className="text-white">Frequently Asked</span>
+            <span className="text-gray-900">Frequently Asked</span>
             <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-400">Questions</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 via-cyan-500 to-blue-500">Questions</span>
           </h1>
-          <p className="text-base sm:text-lg md:text-xl text-slate-400 mb-6 sm:mb-8 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 max-w-2xl mx-auto">
             Find answers to common questions about our web development services
           </p>
         </div>
@@ -116,9 +107,9 @@ export function FAQ() {
         </div>
 
         <div className="mt-20 text-center">
-          <div className="bg-slate-900/50 backdrop-blur-sm border border-slate-800/50 rounded-2xl p-8">
-            <h2 className="text-2xl font-bold text-white mb-4">Still have questions?</h2>
-            <p className="text-slate-400 mb-6">
+          <div className="bg-gray-50 border border-gray-200 rounded-2xl p-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Still have questions?</h2>
+            <p className="text-gray-600 mb-6">
               Can't find the answer you're looking for? We're here to help.
             </p>
             <Link

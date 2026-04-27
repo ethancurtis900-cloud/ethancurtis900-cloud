@@ -41,25 +41,16 @@ const benefits = [
 
 export function Benefits() {
   return (
-    <section className="py-12 sm:py-16 md:py-20 bg-metro-900 relative overflow-hidden">
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute inset-0" style={{
-          backgroundImage: 'linear-gradient(45deg, rgba(59, 130, 246, 0.05) 1px, transparent 1px), linear-gradient(-45deg, rgba(59, 130, 246, 0.05) 1px, transparent 1px)',
-          backgroundSize: '100px 100px'
-        }}></div>
-      </div>
-
-      <div className="absolute top-1/2 left-0 w-96 h-96 bg-accent-600 rounded-full blur-3xl opacity-5"></div>
-
+    <section className="py-12 sm:py-16 md:py-20 bg-gray-50 relative overflow-hidden">
       <div className="relative max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
         <div className="text-center mb-10 sm:mb-12 md:mb-16">
-          <span className="inline-block px-4 py-1.5 sm:px-4 sm:py-2 bg-accent-600/20 text-accent-300 rounded-full text-xs font-space-mono font-bold tracking-widest uppercase mb-4 sm:mb-3">
+          <span className="inline-block px-4 py-1.5 sm:px-4 sm:py-2 bg-emerald-100 text-emerald-700 rounded-full text-xs font-bold tracking-widest uppercase mb-4 sm:mb-3">
             Proven Results
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-900 text-white mb-5 sm:mb-4 md:mb-6 font-inter">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-5 sm:mb-4 md:mb-6">
             What Your Site Will Do
           </h2>
-          <p className="text-lg sm:text-xl text-slate-200 max-w-3xl mx-auto leading-relaxed px-4">
+          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
             These aren't promises. These are the measurable outcomes our clients experience.
           </p>
         </div>
@@ -68,19 +59,19 @@ export function Benefits() {
           {benefits.map((benefit, index) => (
             <div
               key={index}
-              className="group relative bg-gradient-to-br from-metro-800 to-metro-900 rounded-lg p-6 sm:p-8 border border-metro-700 hover:border-accent-600 transition-all duration-300 hover:shadow-xl hover:shadow-accent-600/20"
+              className="group relative bg-white rounded-lg p-6 sm:p-8 border border-gray-200 hover:border-emerald-400 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/10"
             >
-              <div className="w-12 h-12 sm:w-12 sm:h-12 bg-gradient-to-br from-accent-600 to-accent-700 rounded-lg flex items-center justify-center flex-shrink-0 mb-4 sm:mb-4 group-hover:scale-110 transition-transform">
+              <div className="w-12 h-12 sm:w-12 sm:h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-lg flex items-center justify-center flex-shrink-0 mb-4 sm:mb-4 group-hover:scale-110 transition-transform">
                 <benefit.icon className="w-6 h-6 sm:w-6 sm:h-6 text-white" />
               </div>
 
-              <div className="text-4xl sm:text-4xl font-black text-accent-400 mb-2 font-inter">
+              <div className="text-4xl sm:text-4xl font-black text-emerald-600 mb-2">
                 {benefit.stat}
               </div>
-              <div className="text-lg sm:text-lg font-bold text-white mb-3 sm:mb-3 font-inter">
+              <div className="text-lg sm:text-lg font-bold text-gray-900 mb-3 sm:mb-3">
                 {benefit.label}
               </div>
-              <p className="text-slate-300 leading-relaxed text-base sm:text-base">
+              <p className="text-gray-600 leading-relaxed text-base sm:text-base">
                 {benefit.description}
               </p>
             </div>
