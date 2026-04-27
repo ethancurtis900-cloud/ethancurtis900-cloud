@@ -1,23 +1,17 @@
-import { Zap, DollarSign, MessageSquare, Target } from 'lucide-react';
-
 const reasons = [
   {
-    icon: Target,
     title: 'We Only Do Local Services',
     description: 'Not e-commerce. Not SaaS. Just local service businesses—plumbers, HVAC, landscapers, contractors. We know your industry inside and out.'
   },
   {
-    icon: Zap,
     title: '7-Day Launch vs 8-Week Wait',
     description: 'Traditional agencies take 6-8 weeks. We launch in 7 days. Every week without a site costs you leads to competitors who are already online.'
   },
   {
-    icon: DollarSign,
     title: '$150-$500 vs $5,000+',
     description: 'Local service websites starting at $150. Same quality as $5K-$15K agency sites. No bloat, no overhead—just results.'
   },
   {
-    icon: MessageSquare,
     title: 'Real Results from Real Businesses',
     description: 'One HVAC company got 47 leads in the first month. A plumber added $12K/month in new revenue. A landscaper booked out 3 months ahead.'
   }
@@ -43,21 +37,14 @@ export function WhyChooseUs() {
           {reasons.map((reason, index) => (
             <div
               key={index}
-              className="group relative bg-white rounded-lg p-6 sm:p-8 border border-gray-200 hover:border-emerald-400 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/10"
+              className="bg-white rounded-lg p-6 sm:p-8 border border-gray-200 hover:border-emerald-400 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/10"
             >
-              <div className="flex items-start gap-4">
-                <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                  <reason.icon className="w-7 h-7 sm:w-8 sm:h-8 text-white" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">
-                    {reason.title}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed text-base sm:text-lg">
-                    {reason.description}
-                  </p>
-                </div>
-              </div>
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">
+                {reason.title}
+              </h3>
+              <p className="text-gray-600 leading-relaxed text-base sm:text-lg">
+                {reason.description}
+              </p>
             </div>
           ))}
         </div>
