@@ -9,7 +9,7 @@ export function Hero() {
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-16 pt-20 pb-16 sm:pt-24 sm:pb-20 md:pt-28 md:pb-24 text-center">
-        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[5.5rem] font-bold leading-[1.05] tracking-tight mb-6 sm:mb-8">
+        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[5.5rem] font-semibold leading-[1.05] tracking-tight mb-6 sm:mb-8">
           Websites for Local Service Businesses
         </h1>
 
