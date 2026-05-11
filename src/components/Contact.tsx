@@ -8,7 +8,7 @@ export function Contact() {
     email: '',
     phone: '',
     message: '',
-    website: ''
+    _trap: ''
   });
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -20,7 +20,7 @@ export function Contact() {
     setError('');
 
     try {
-      if (formData.website) {
+      if (formData._trap) {
         throw new Error('Invalid submission');
       }
 
@@ -67,7 +67,7 @@ export function Contact() {
 
       rateLimiter.resetAttempts(`contact_${sanitizedData.email}`);
       setSubmitted(true);
-      setFormData({ name: '', email: '', phone: '', message: '', website: '' });
+      setFormData({ name: '', email: '', phone: '', message: '', _trap: '' });
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Failed to send message. Please try again.');
     } finally {
@@ -254,10 +254,10 @@ export function Contact() {
 
                 <input
                   type="text"
-                  name="website"
-                  value={formData.website}
+                  name="_trap"
+                  value={formData._trap}
                   onChange={handleChange}
-                  autoComplete="off"
+                  autoComplete="nope"
                   tabIndex={-1}
                   style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px' }}
                   aria-hidden="true"
