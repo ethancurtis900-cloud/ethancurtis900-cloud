@@ -1,5 +1,5 @@
 import { Mail, Instagram, Send, CheckCircle, Clock } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { rateLimiter, sanitizeInput, validateEmail } from '../lib/security';
 
 export function Contact() {
@@ -7,9 +7,9 @@ export function Contact() {
     name: '',
     email: '',
     phone: '',
-    message: '',
-    _trap: ''
+    message: ''
   });
+  const trapRef = useRef<HTMLInputElement>(null);
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState('');
@@ -20,7 +20,7 @@ export function Contact() {
     setError('');
 
     try {
-      if (formData._trap) {
+      if (trapRef.current?.value) {
         throw new Error('Invalid submission');
       }
 
@@ -67,7 +67,7 @@ export function Contact() {
 
       rateLimiter.resetAttempts(`contact_${sanitizedData.email}`);
       setSubmitted(true);
-      setFormData({ name: '', email: '', phone: '', message: '', _trap: '' });
+      setFormData({ name: '', email: '', phone: '', message: '' });
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Failed to send message. Please try again.');
     } finally {
@@ -253,13 +253,12 @@ export function Contact() {
                 </div>
 
                 <input
+                  ref={trapRef}
                   type="text"
-                  name="_trap"
-                  value={formData._trap}
-                  onChange={handleChange}
-                  autoComplete="nope"
+                  name="url"
                   tabIndex={-1}
-                  style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px' }}
+                  autoComplete="off"
+                  style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', opacity: 0 }}
                   aria-hidden="true"
                 />
 
