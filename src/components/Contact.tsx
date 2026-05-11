@@ -75,13 +75,23 @@ export function Contact() {
     }
   };
 
+  const formatPhone = (raw: string) => {
+    const digits = raw.replace(/\D/g, '').slice(0, 11);
+    if (digits.length === 0) return '';
+    if (digits.length <= 1) return `+${digits}`;
+    if (digits.length <= 4) return `+${digits[0]} (${digits.slice(1)}`;
+    if (digits.length <= 7) return `+${digits[0]} (${digits.slice(1, 4)}) ${digits.slice(4)}`;
+    return `+${digits[0]} (${digits.slice(1, 4)}) ${digits.slice(4, 7)}-${digits.slice(7)}`;
+  };
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const value = e.target.value;
+    const { name, value } = e.target;
+    if (name === 'phone') {
+      setFormData(prev => ({ ...prev, phone: formatPhone(value) }));
+      return;
+    }
     if (value.length <= 1000) {
-      setFormData(prev => ({
-        ...prev,
-        [e.target.name]: value
-      }));
+      setFormData(prev => ({ ...prev, [name]: value }));
     }
   };
 
