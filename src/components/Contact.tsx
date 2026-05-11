@@ -1,4 +1,4 @@
-import { Mail, Instagram, Send } from 'lucide-react';
+import { Mail, Instagram, Send, CheckCircle, Clock } from 'lucide-react';
 import { useState } from 'react';
 import { rateLimiter, sanitizeInput, validateEmail } from '../lib/security';
 
@@ -68,7 +68,6 @@ export function Contact() {
       rateLimiter.resetAttempts(`contact_${sanitizedData.email}`);
       setSubmitted(true);
       setFormData({ name: '', email: '', phone: '', message: '', website: '' });
-      setTimeout(() => setSubmitted(false), 5000);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Failed to send message. Please try again.');
     } finally {
@@ -85,6 +84,38 @@ export function Contact() {
       }));
     }
   };
+
+  if (submitted) {
+    return (
+      <section className="py-8 sm:py-16 md:py-20 bg-white relative overflow-hidden min-h-[70vh] flex items-center">
+        <div className="absolute top-0 right-0 w-64 h-64 sm:w-96 sm:h-96 lg:w-[600px] lg:h-[600px] bg-emerald-50 rounded-full blur-3xl opacity-60"></div>
+        <div className="absolute bottom-0 left-0 w-64 h-64 sm:w-96 sm:h-96 lg:w-[600px] lg:h-[600px] bg-cyan-50 rounded-full blur-3xl opacity-60"></div>
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
+          <div className="bg-white rounded-3xl shadow-xl border border-gray-200 p-10 sm:p-14">
+            <div className="flex justify-center mb-6">
+              <div className="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center">
+                <CheckCircle className="w-10 h-10 text-emerald-600" strokeWidth={1.5} />
+              </div>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Thank You!</h2>
+            <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+              Your message has been received. We appreciate you reaching out to MetroNexa and will get back to you as soon as possible.
+            </p>
+            <div className="inline-flex items-center gap-2 bg-emerald-50 border border-emerald-200 text-emerald-700 px-5 py-3 rounded-full font-semibold text-sm mb-8">
+              <Clock className="w-4 h-4" />
+              We respond within 24 hours
+            </div>
+            <div className="pt-6 border-t border-gray-100">
+              <p className="text-sm text-gray-500 mb-4">In the meantime, feel free to reach us directly at</p>
+              <a href="mailto:contact@metronexa.com" className="text-emerald-600 font-semibold hover:text-emerald-700 transition-colors">
+                contact@metronexa.com
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="py-8 sm:py-16 md:py-20 bg-white relative overflow-hidden">
@@ -230,12 +261,6 @@ export function Contact() {
                   {isSubmitting ? 'Sending...' : submitted ? 'Message Sent!' : 'Send Message'}
                   <Send className="w-5 h-5 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
-
-                {submitted && (
-                  <div className="bg-emerald-50 border border-emerald-200 text-emerald-700 px-4 py-3 rounded-xl text-center font-semibold">
-                    Thanks! We'll be in touch soon.
-                  </div>
-                )}
 
                 {error && (
                   <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-xl text-center font-semibold">
